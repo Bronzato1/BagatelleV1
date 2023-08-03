@@ -299,8 +299,6 @@
   function downloadFile(fileContent) 
   {
     const rows = fileContent.split('\n');
-    const result = [];
-    //const imageURLs = [];
 
     // Remove empty last element
     var lastElement = rows.slice(-1);
@@ -318,13 +316,7 @@
         const fileContent = `---\nname: ${columns[0]}\ntag: ${columns[4].toLowerCase()}\naddress: ${columns[1]}\nwebsite: ${columns[15]}\nlocation: ${columns[12]}\nimage: '0.jpg'\n---\n`;
         const imageUrl = columns[18];
         zip.folder(`${folderName}`).file(`_index.md`, fileContent);
-
-        //debugger;
-        //const elm = document.querySelector('img[src="' + imageUrl + '"]');
-        //const base64Data = getBase64FromImageSrc(elm);
-
         zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
-        //imageURLs.push(imageUrl);
     };
 
     zip.generateAsync({type:"blob"})
@@ -414,7 +406,6 @@
       return new Promise(function (resolve, reject) {
           getBase64FromUrl(imageUrl)
               .then((base64Data) => {
-                  debugger;
                   if (base64Data) {
                       requestData.input.image += base64Data;
                       axios.post(apiUrl, requestData, requestOptions)
@@ -438,11 +429,6 @@
                                               const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
                                               if (elm)
                                                   elm.style.color = '#39B642';
-                                              else
-                                              {
-                                                  console.log('elm: ' + imageUrl);
-                                                  alert('elm not found');
-                                              }
                                                   
                                               if (currentItem == totalItems) {
                                                     progressLabel.textContent = "Fin du traitement";
