@@ -319,11 +319,11 @@
         const imageUrl = columns[18];
         zip.folder(`${folderName}`).file(`_index.md`, fileContent);
 
-        debugger;
-        const elm = document.querySelector('img[src="' + imageUrl + '"]');
-        const base64Data = getBase64FromImageSrc(elm);
+        //debugger;
+        //const elm = document.querySelector('img[src="' + imageUrl + '"]');
+        //const base64Data = getBase64FromImageSrc(elm);
 
-        zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl, base64Data).then(getBinaryContentFromUrl), { binary: true });
+        zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
         //imageURLs.push(imageUrl);
     };
 
@@ -387,7 +387,7 @@
       }
   }
 
-  async function getPredictionFromUrl(imageUrl, base64Data)
+  async function getPredictionFromUrl(imageUrl)
   {
       const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.replicate.com/v1/predictions';
       const apiToken = 'r8_WsSrh8w9Qp9YQwahxuiNnbWnF47T8rj3ZQ9vx';
@@ -412,8 +412,8 @@
       progressLabel.textContent = "Traitement en cours...";
       
       return new Promise(function (resolve, reject) {
-          //getBase64FromUrl(imageUrl)
-          //    .then((base64Data) => {
+          getBase64FromUrl(imageUrl)
+              .then((base64Data) => {
                   debugger;
                   if (base64Data) {
                       requestData.input.image += base64Data;
@@ -463,7 +463,7 @@
                               reject(error);
                           });
                   }
-              //});
+              });
       });
   }
 
