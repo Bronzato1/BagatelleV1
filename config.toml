@@ -1,4 +1,4 @@
-#------------------------------- 
+#-------------------------------  
 # General Site Settings    
 baseURL = "http://example.org/"
 languageCode = "en-us"
