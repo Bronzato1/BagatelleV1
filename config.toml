@@ -1,5 +1,5 @@
 #-------------------------------
-# General Site Settings
+# General Site Settings  
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Bagatelle"
