@@ -1,0 +1,31 @@
+{{ .Scratch.Add "index" slice }}
+
+{{/********Boucle sur tous les stores********/}}
+
+{{ range (where .Site.Pages "Type" "stores") }}
+
+    {{ if not (eq .Params.Name nil) }}
+      {{ $tag := .Params.Tag }}
+      {{ $store_folder := replace .File.Dir "\\" "/" }}
+      {{ $image_url := printf "%s%s%s" .Site.BaseURL $store_folder .Params.image }}
+      {{ $.Scratch.Add "index" (dict "type" "store" "tag" $tag "title" .Params.Name "content" (printf "%s" $tag | printf "- %s - %s " .Summary | printf "%s %s" .Params.Name | htmlUnescape | plainify) "date" "" "permalink" .Permalink "image" ($image_url | absURL)) }}
+    {{ end }}
+
+{{ end }}
+
+{{/********Boucle sur tous les posts********/}}
+
+{{ range (where .Site.RegularPages "Type" "posts") }}
+
+    {{ $tag := "-" }}
+    {{ range first 1 .Params.Tags }}
+      {{ $tag = .  }}
+    {{ end }}
+
+    {{ $post_folder := replace .File.Dir "\\" "/" }}
+    {{ $image_url := printf "%s%s%s" .Site.BaseURL $post_folder .Params.image }}
+    {{ $.Scratch.Add "index" (dict "type" "post" "tag" $tag "title" .Title "content" (.Summary | plainify) "date" (.Date | dateFormat "2 January 2006") "permalink" .Permalink "image" ($image_url | absURL)) }}
+
+{{ end }}
+
+{{ $.Scratch.Get "index" | jsonify }}

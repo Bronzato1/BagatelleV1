@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<!-- begin hero -->
+<section class="hero hero--left">
+  <div class="container">
+    {{ if .Title }}
+    <h1 class="hero__title">{{ .Title }}</h1>
+    {{ end }}
+  </div>
+</section>
+<!-- end hero -->
+
+<div class="section google-page animate">
+    <div class="container">
+
+        <div clss="row">
+            <div class="col col-12 col-d-12 col-t-12">
+                <label for="fileInput" class="btn" style="border: 1px solid #757575; padding: 0px 5px; background-color: buttonface; border-radius: 3px;">Choisir un fichier CSV</label>
+                <input id="fileInput" style="display: none;" type="file">
+                <label id="fileLabel"></label>
+                <br />
+                <button id="uploadFileButton">Contrôler les données</button>
+                <label id="countLabel"></label>
+                <label id="elementLabel"></label>
+                <br />
+                <button id="downloadFileButton">Télécharger le ZIP</button>
+                <label id="progressLabel"></label>
+                <br />
+                <button id="resetButton">Réinitialisation</button>
+                <br/>
+                <br />
+            </div>
+        </div>
+
+        <div clss="row">
+            <div class="col col-12 col-d-12 col-t-12">
+                <table id="tableData" style="display: none;">
+                    <thead>
+                        <tr>
+                            <td style="border-bottom-color: #F99BFF; border-bottom-width: 3px; background-color: white; border: none;"></td>
+                            <td style="border-bottom-color: #C42122; border-bottom-width: 3px; border-top: solid 0 #000; border-top-left-radius: 10px; border-left: solid 0px #000; border-top-left-radius: 10px; "><strong>Nom</strong></td>
+                            <td style="border-bottom-color: #43B3E9; border-bottom-width: 3px; "><strong>Adresse</strong></td>
+                            <td style="border-bottom-color: #39B642; border-bottom-width: 3px;"><strong>Catégorie</strong></td>
+                            <td style="border-bottom-color: #cd2cb2; border-bottom-width: 3px; border-top: solid 0 #000; border-top-right-radius: 10px; border-right: solid 0px #000;"><strong>Téléphone</strong></td>
+                            <td style="border-bottom-color: #000000; border-bottom-width: 3px; background-color: white; border: none;"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table body will be populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-2 col-d-4 col-t-12">
+
+            </div>
+            <div class="col col-6 col-d-6 col-t-12">
+                <button id="downloadZipButton" style="display: none;">Exécuter la requête</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{{ end }}

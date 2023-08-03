@@ -1,0 +1,78 @@
+{{ define "main" }}
+
+<!-- begin store -->
+<section class="section store">
+  <div class="container">
+
+    <div class="store__content">
+      <div class="store__image"><img class="lazy" data-src="{{ .Params.image }}" alt="{{ .Params.name }}"></div>
+      <h1 class="store__name">{{ .Params.name }}</h1>
+
+      <div class="store__info">
+        {{ if .Params.location }}
+          <a class="store__social__item" href="{{ .Params.location }}" target="_blank" rel="noopener" aria-label="Location link"><i class="ion ion-ios-pin"></i> Google Maps</a>
+        {{ end }}
+        {{ if .Params.website }}
+          <a class="store__social__item" href="{{ .Params.website }}" target="_blank" rel="noopener" aria-label="Website link"><i class="ion ion-ios-ribbon"></i> Site internet</a>
+        {{ end }}
+        {{ if .Params.facebook }}
+          <a class="store__social__item" href="{{ .Params.facebook }}" target="_blank" rel="noopener" aria-label="Facebook link"><i
+            class="ion ion-logo-facebook"></i> Facebook</a>
+        {{ end }}
+        {{ if .Params.twitter }}
+          <a class="store__social__item" href="{{ .Params.twitter }}" target="_blank" rel="noopener" aria-label="Twitter link"><i class="ion ion-logo-twitter"></i> Twitter</a>
+        {{ end }}
+        {{ if .Params.instagram }}
+          <a class="store__social__item" href="{{ .Params.instagram }}" target="_blank" rel="noopener" aria-label="Instagram link"><i class="ion ion-logo-instagram"></i> Instagram</a>
+        {{ end }}
+      </div>
+
+      {{ .Content }}
+
+        <table class="store__table">
+          {{ if .Params.phone }}
+            <tr>
+              <td><i class="ion ion-md-call"></i></td>
+              <td class="store__phone__item" ><a href="tel:{{ .Params.phone }}">{{ .Params.phone }}</a></td>
+            </tr>
+          {{ end }}
+          {{ if .Params.mail }}
+            <tr>
+              <td><i class="ion ion-md-mail"></i></td>
+              <td class="store__mail__item" ><a href="mailto:{{ .Params.mail }}">{{ .Params.mail }}</a></td>
+            </tr>
+          {{ end }}
+          {{ if .Params.address }}
+            <tr>
+              <td><i class="ion ion-md-home"></i></td>
+              <td class="store__address__item" >{{ .Params.address }}</td>
+            </tr>
+          {{ end }}
+          {{ if .Params.schedule }}
+            <tr>
+              <td><i class="ion ion-md-time"></i></td>
+              <td class="store__address__item" >{{ .Params.schedule }}</td>
+            </tr>
+          {{ end }}
+        </table>
+
+
+    </div>
+
+  </div>
+
+  <div class="container">
+    <h2 class="store__posts__count">{{ len .Pages }} {{ if lt (len .Pages) 2 }}article{{ else }}articles{{ end }}</h2>
+    <div class="row animate">
+      {{ range .Data.Pages }}
+      <div class="col col-4 col-d-6 col-t-12">
+        {{ partial "article.html" (dict "context" .) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+</section>
+<!-- end store -->
+
+{{ end }}

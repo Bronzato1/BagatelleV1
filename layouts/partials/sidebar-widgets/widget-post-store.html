@@ -1,0 +1,45 @@
+{{ if .Params.stores }}
+<div class="widget-sidebar widget-post-store">
+  {{ range first 1 .Params.stores }}
+  {{ with $.Site.GetPage "taxonomyTerm" (printf "stores/%s" (urlize .)) }}
+
+  {{ if .Params.image }}
+  <div class="post-store-image">
+    <a href="{{ .Permalink }}" class="post__store__image">
+      {{ $store_folder := replace .File.Dir "\\" "/" }}
+      {{ $image_url := printf "%s%s%s" .Site.BaseURL $store_folder .Params.image }}
+      <img class="lazy" data-src="{{ $image_url }}" alt="{{ .Params.name }}">
+    </a>
+  </div>
+  {{ end }}
+
+  <h2 class="post-store-name">
+    <a href="{{ .Permalink }}">{{ .Params.name }}</a>
+  </h2>
+
+  {{ if .Content }}
+  <div class="post-store-description">{{ .Content }}</div>
+  {{ end }}
+
+  <div class="post-store-social">
+    {{ if .Params.website }}
+    <a class="post-store-link" href="{{ .Params.website }}" target="_blank" rel="noopener" aria-label="Website link"><i class="ion ion-ios-ribbon"></i></a>
+    {{ end }}
+    {{ if .Params.location }}
+    <a class="post-store-link" href="{{ .Params.location }}" target="_blank" rel="noopener" aria-label="Localisation link"><i class="ion ion-md-pin"></i></a>
+    {{ end }}
+    {{ if .Params.facebook }}
+    <a class="post-store-link" href="{{ .Params.facebook }}" target="_blank" rel="noopener" aria-label="Facebook link"><i class="ion ion-logo-facebook"></i></a>
+    {{ end }}
+    {{ if .Params.twitter }}
+    <a class="post-store-link" href="{{ .Params.twitter }}" target="_blank" rel="noopener" aria-label="Twitter link"><i class="ion ion-logo-twitter"></i></a>
+    {{ end }}
+    {{ if .Params.instagram }}
+    <a class="post-store-link" href="{{ .Params.instagram }}" target="_blank" rel="noopener" aria-label="Instagram link"><i class="ion ion-logo-instagram"></i></a>
+    {{ end }}
+  </div>
+
+  {{ end }}
+  {{ end }}
+</div>
+{{ end }}
