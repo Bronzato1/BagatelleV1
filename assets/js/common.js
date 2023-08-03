@@ -436,8 +436,14 @@
                                               currentItem++;
 
                                               const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
-                                              if (elm) elm.style.color = '#39B642';
-
+                                              if (elm)
+                                                  elm.style.color = '#39B642';
+                                              else
+                                              {
+                                                  console.log('elm: ' + imageUrl);
+                                                  alert('elm not found');
+                                              }
+                                                  
                                               if (currentItem == totalItems) {
                                                     progressLabel.textContent = "Fin du traitement";
                                               } else {      
