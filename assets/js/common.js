@@ -222,6 +222,35 @@
     });
   }
 
+  function parseCSVWithNewlines(csvString) 
+  {
+      const rows = [];
+      let currentRow = "";
+      let insideQuotes = false;
+
+      csvString.split("\n").forEach((line) =>
+      {
+            if (insideQuotes) {
+                currentRow += "\n" + line;
+            } else {
+                currentRow = line;
+            }
+
+            // Count the number of quotes in the line to determine if we are inside a quoted field.
+            const quoteCount = (currentRow.match(/"/g) || []).length;
+            insideQuotes = quoteCount % 2 !== 0;
+
+            if (!insideQuotes) {
+                rows.push(currentRow);
+            }
+      });
+
+      // Process each row and split the fields using the delimiter (e.g., semicolon).
+      const parsedRows = rows.map((row) => row.split(';'));
+
+      return parsedRows;
+  }
+
   function populateTable(fileContent)
   {
       const table = document.querySelector('#tableData');
@@ -232,7 +261,7 @@
       if (tableRows.length > 0)
           tableRows.forEach(elm => elm.remove());
 
-      const rows = fileContent.split('\n');
+      const rows = parseCSVWithNewlines(fileContent);
 
       // Remove empty last element
       var lastElement = rows.slice(-1);
@@ -240,17 +269,17 @@
 
       for (let i = 1; i < rows.length; i++)
       {
-          const columns = rows[i].split(';');
+          const columns = rows[i];
           const row = tableBody.insertRow();
 
           // Image
-          const cell18 = row.insertCell();
-          cell18.style = 'background-color: white; border: none;';
-          const element18 = document.createElement('img');
-          element18.style = 'width: 40px; height: 40px; border-radius: 10px; object-fit: cover; ';
-          element18.src = columns[18];
-          element18.setAttribute('crossorigin', 'anonymous');
-          cell18.appendChild(element18);
+          const cell25 = row.insertCell();
+          cell25.style = 'background-color: white; border: none;';
+          const element25 = document.createElement('img');
+          element25.style = 'width: 40px; height: 40px; border-radius: 10px; object-fit: cover; ';
+          element25.src = columns[25];
+          element25.setAttribute('crossorigin', 'anonymous');
+          cell25.appendChild(element25);
           
           // Name
           const cell0 = row.insertCell();
@@ -265,8 +294,8 @@
           cell4.textContent = columns[4];
 
           // Phone
-          const cell6 = row.insertCell();
-          cell6.textContent = columns[6];
+          const cell10 = row.insertCell();
+          cell10.textContent = columns[10];
 
           // Check
           const cell99 = row.insertCell();
@@ -311,8 +340,9 @@
 
     for (let i = 1; i < rows.length; i++)
     {
+        debugger;
         const columns = rows[i].split(';');
-        const folderName = columns[0].replaceAll('\'', '-').replaceAll(' ', '-').replaceAll('â', 'a').replaceAll('û','u').toLowerCase();
+        const folderName = columns[0].replaceAll('\'', '-').replaceAll(' ', '-').replaceAll('é', 'e').replaceAll('/', '-').replaceAll('.', '-').replaceAll('!', '').replaceAll('?', '').replaceAll('(', '-').replaceAll(')', '-').replaceAll('â', 'a').replaceAll('ô', 'o').replaceAll('û', 'u').replaceAll('&', '-').replace(/-{2,}/g, '-').replace(/[-]$/, "").toLowerCase();
         const fileContent = `---\nname: ${columns[0]}\ntag: ${columns[4].toLowerCase()}\naddress: ${columns[1]}\nwebsite: ${columns[15]}\nlocation: ${columns[12]}\nimage: '0.jpg'\n---\n`;
         const imageUrl = columns[18];
         zip.folder(`${folderName}`).file(`_index.md`, fileContent);
