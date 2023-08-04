@@ -428,8 +428,8 @@
         const imageUrl = columns[25];
 
         zip.folder(`${folderName}`).file(`_index.md`, fileContent);
-
-        if (optimiseCheck)
+        
+        if (optimiseCheck.checked)
             zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
         else
         {
