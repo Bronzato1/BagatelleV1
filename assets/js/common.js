@@ -340,11 +340,10 @@
 
     for (let i = 1; i < rows.length; i++)
     {
-        debugger;
         const columns = rows[i].split(';');
         const folderName = columns[0].replaceAll('\'', '-').replaceAll(' ', '-').replaceAll('é', 'e').replaceAll('/', '-').replaceAll('.', '-').replaceAll('!', '').replaceAll('?', '').replaceAll('(', '-').replaceAll(')', '-').replaceAll('â', 'a').replaceAll('ô', 'o').replaceAll('û', 'u').replaceAll('&', '-').replace(/-{2,}/g, '-').replace(/[-]$/, "").toLowerCase();
-        const fileContent = `---\nname: ${columns[0]}\ntag: ${columns[4].toLowerCase()}\naddress: ${columns[1]}\nwebsite: ${columns[15]}\nlocation: ${columns[12]}\nimage: '0.jpg'\n---\n`;
-        const imageUrl = columns[18];
+        const fileContent = `---\nname: ${columns[0]}\ntag: ${columns[4].toLowerCase()}\naddress: ${columns[1]}\nwebsite: ${columns[22]}\nlocation: ${columns[18]}\nimage: '0.jpg'\n---\n`;
+        const imageUrl = columns[25];
         zip.folder(`${folderName}`).file(`_index.md`, fileContent);
         zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
     };
