@@ -327,7 +327,7 @@
     
   function downloadFile(fileContent) 
   {
-    const rows = fileContent.split('\n');
+    const rows = parseCSVWithNewlines(fileContent);
 
     // Remove empty last element
     var lastElement = rows.slice(-1);
@@ -340,7 +340,7 @@
 
     for (let i = 1; i < rows.length; i++)
     {
-        const columns = rows[i].split(';');
+        const columns = rows[i];
         const folderName = columns[0].replaceAll('\'', '-').replaceAll(' ', '-').replaceAll('é', 'e').replaceAll('/', '-').replaceAll('.', '-').replaceAll('!', '').replaceAll('?', '').replaceAll('(', '-').replaceAll(')', '-').replaceAll('â', 'a').replaceAll('ô', 'o').replaceAll('û', 'u').replaceAll('&', '-').replace(/-{2,}/g, '-').replace(/[-]$/, "").toLowerCase();
         const fileContent = `---\nname: ${columns[0]}\ntag: ${columns[4].toLowerCase()}\naddress: ${columns[1]}\nwebsite: ${columns[22]}\nlocation: ${columns[18]}\nimage: '0.jpg'\n---\n`;
         const imageUrl = columns[25];
