@@ -16,7 +16,8 @@
     fileInput = document.querySelector("#fileInput"),
     uploadFileButton = document.querySelector("#uploadFileButton"),
     downloadFileButton = document.querySelector("#downloadFileButton"),
-    resetButton = document.querySelector("#resetButton");
+    resetButton = document.querySelector("#resetButton"),
+    optimiseCheck = document.querySelector("#optimiseCheck");
 
   // =======================================================
   // Menu + Search + Theme Switcher
@@ -251,6 +252,32 @@
       return parsedRows;
   }
 
+  function parseOpeningHoursWithComma(openingHoursString) 
+  {
+      const rows = [];
+      let currentRow = "";
+      let insideBrackets = false;
+
+      openingHoursString.split(",").forEach((line) =>
+      {
+            if (insideBrackets) {
+                currentRow += "," + line;
+            } else {
+                currentRow = line;
+            }
+
+            // Count the number of brackets in the line to determine if we are inside a bracket field.
+            const openingAndClosingbrackets = (currentRow.match(/\[.*\]/) || []).length;
+            insideBrackets = openingAndClosingbrackets == 0;
+
+            if (!insideBrackets) {
+                rows.push(currentRow.replace('[', '').replace(']','').replace(':','#').trim());
+            }
+      });
+
+      return rows.join(';');
+  }
+
   function populateTable(fileContent)
   {
       const table = document.querySelector('#tableData');
@@ -341,16 +368,61 @@
     for (let i = 1; i < rows.length; i++)
     {
         const columns = rows[i];
+        const socialMedias = columns[14].split('\n');
+        const facebook = socialMedias.find((str) => str.substring(0, 'facebook'.length) === 'facebook');
+        const twitter = socialMedias.find((str) => str.substring(0, 'twitter'.length) === 'twitter');
+        const instagram = socialMedias.find((str) => str.substring(0, 'instagram'.length) === 'instagram');
+        const openingHours = columns[24];
         const folderName = columns[0].replaceAll('\'', '-').replaceAll(' ', '-').replaceAll('é', 'e').replaceAll('/', '-').replaceAll('.', '-').replaceAll('!', '').replaceAll('?', '').replaceAll('(', '-').replaceAll(')', '-').replaceAll('â', 'a').replaceAll('ô', 'o').replaceAll('û', 'u').replaceAll('&', '-').replace(/-{2,}/g, '-').replace(/[-]$/, "").toLowerCase();
-        const fileContent = `---\nname: ${columns[0]}\ntag: ${columns[4].toLowerCase()}\naddress: ${columns[1]}\nwebsite: ${columns[22]}\nlocation: ${columns[18]}\nimage: '0.jpg'\n---\n`;
+        let aryContent = [];
+
+        aryContent.push(`---`);
+        aryContent.push(`name: ${columns[0]}`);
+        aryContent.push(`tag: ${columns[4].toLowerCase()}`);
+        aryContent.push(`address: ${columns[1]}`);
+        aryContent.push(`phone: ${columns[10]}`);
+        aryContent.push(`mail: ${columns[13]}`);
+        aryContent.push(`location: ${columns[18]}`);
+        aryContent.push(`website: ${columns[22]}`);
+
+        if (facebook)
+            aryContent.push(facebook);
+        if (twitter)
+            aryContent.push(twitter);
+        if (instagram)
+            aryContent.push(instagram);
+
+        if (openingHours) {
+            const stringOpeningHours = parseOpeningHoursWithComma(columns[24]);
+            aryContent.push(`schedule: '${stringOpeningHours}'`);
+        }
+        
+        aryContent.push(`image: '0.jpg'`);
+        aryContent.push(`---`);
+        
+        const fileContent = aryContent.join('\n');
         const imageUrl = columns[25];
+
         zip.folder(`${folderName}`).file(`_index.md`, fileContent);
-        zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
+
+        if (optimiseCheck)
+            zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
+        else
+        {
+            const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
+            if (elm) elm.style.color = '#39B642';
+        }
     };
 
     zip.generateAsync({type:"blob"})
-    .then(function(content) {
-        saveAs(content, "example.zip");
+        .then(function (content) {
+            let dateObj = new Date();
+            let month = (dateObj.getUTCMonth() + 1).toString().padStart(2, "0");;
+            let day = dateObj.getUTCDate().toString().padStart(2, "0");;
+            let year = dateObj.getUTCFullYear().toString().padStart(4, "0");;
+            let hour = dateObj.getHours().toString().padStart(2, "0");;
+            let min = dateObj.getMinutes().toString().padStart(2, "0");;
+            saveAs(content, `G-Maps-Extract-${year}-${month}-${day}-${hour}-${min}.zip`);
     });
   }
   
@@ -456,8 +528,7 @@
                                               currentItem++;
 
                                               const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
-                                              if (elm)
-                                                  elm.style.color = '#39B642';
+                                              if (elm) elm.style.color = '#39B642';
                                                   
                                               if (currentItem == totalItems) {
                                                     progressLabel.textContent = "Fin du traitement";

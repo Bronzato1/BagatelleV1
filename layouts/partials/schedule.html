@@ -1,0 +1,11 @@
+<table>
+    {{ $data := .Params.schedule }}
+    {{ $rows := split $data ";" }}
+    {{ range $row := $rows }}
+    <tr style="background-color: unset;">
+        {{ $cols := split $row "#" }}
+        <td style="padding: 0;">{{ index $cols 0 }}</td>
+        <td style="padding: 0;">{{ index $cols 1 }}</td>
+    </tr>
+    {{ end }}
+</table>
