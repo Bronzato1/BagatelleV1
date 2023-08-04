@@ -274,7 +274,6 @@
                 rows.push(currentRow.replace('[', '').replace(']','').replace(':','#').trim());
             }
       });
-
       return rows.join(';');
   }
 
