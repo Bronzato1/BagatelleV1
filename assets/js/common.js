@@ -301,7 +301,7 @@
           const cell99 = row.insertCell();
           cell99.style = 'background-color: white; border: none;';
           const element99 = document.createElement("i");
-          element99.setAttribute("data-image-url", columns[18]);
+          element99.setAttribute("data-image-url", columns[25]);
           element99.classList.add('ion', 'ion-ios-checkmark-circle');
           element99.style = 'color: #e2e2e2; font-size: 20px;';
           cell99.appendChild(element99);
