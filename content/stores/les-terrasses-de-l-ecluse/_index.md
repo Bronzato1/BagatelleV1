@@ -1,13 +1,13 @@
 ---
-name: Les terrasses de l'écluse
-description: 
-Tag: restaurant
+name: Les Terrasses de l'Écluse
+tag: restaurant
+address: Chau. de Liège 477, 5100 Namur, Belgique
+phone: +32 81 30 33 60
+mail: 
+location: https://www.google.com/maps?cid=15895364876968156847
+website: https://terrasses-ecluse.be/
+facebook: https://www.facebook.com/lesterrassesdelecluse/
+instagram: https://www.instagram.com/lesterrassesdelecluse/
+schedule: 'vendredi# 12:00-14:30, 18:00-22:00;samedi# 12:00-14:30, 18:00-22:00;dimanche# 12:00-14:30, 18:00-22:00;lundi# 12:00-14:30, 18:00-22:00;mardi# 12:00-14:30, 18:00-22:00;mercredi# 12:00-14:30, 18:00-22:00;jeudi# 12:00-14:30, 18:00-22:00'
 image: '0.jpg'
-location: https://goo.gl/maps/C8bXn1emMAjCgNHt8
-website: https://terrasses-ecluse.be
-phone: 081/30.33.60
-address: Chaussée de Liège 477, 5100 Namur
-schedule: Ouvert tous les jours de 12h à 14h30 et 18h à 22h.
 ---
-
-Une expérience culinaire exceptionnelle où la fusion subtile des saveurs locales et internationales ravira vos papilles.

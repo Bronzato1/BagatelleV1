@@ -246,11 +246,35 @@
             }
       });
 
-      // Process each row and split the fields using the delimiter (e.g., semicolon).
-      const parsedRows = rows.map((row) => row.split(';'));
-
+      // Process each row and split the fields using the delimiter (e.g., colom).
+      const parsedRows = rows.map((row) => parseRowWithSemiColon(row));
       return parsedRows;
   }
+
+    function parseRowWithSemiColon(rowString)
+    {
+        const columns = [];
+        let currentColumn = "";
+        let insideQuotes = false;
+
+        rowString.split(";").forEach((column) => {
+            if (insideQuotes) {
+                currentColumn += ";" + column;
+            } else {
+                currentColumn = column;
+            }
+
+            // Count the number of quotes in the line to determine if we are inside a quoted field.
+            const quoteCount = (currentColumn.match(/"/g) || []).length;
+            insideQuotes = quoteCount % 2 !== 0;
+
+            if (!insideQuotes) {
+                columns.push(currentColumn.replaceAll('"', ''));
+            }
+        });
+
+        return columns;
+    }
 
   function parseOpeningHoursWithComma(openingHoursString) 
   {
@@ -298,11 +322,12 @@
           const columns = rows[i];
           const row = tableBody.insertRow();
 
+          console.log('Populate table for: ' + columns[0]);
           // Image
           const cell25 = row.insertCell();
           cell25.style = 'background-color: white; border: none;';
           const element25 = document.createElement('img');
-          element25.style = 'width: 40px; height: 40px; border-radius: 10px; object-fit: cover; ';
+          element25.style = 'width: 40px; height: 40px; border-radius: 10px; object-fit: cover;';
           element25.src = columns[25];
           element25.setAttribute('crossorigin', 'anonymous');
           cell25.appendChild(element25);
@@ -372,7 +397,7 @@
         const twitter = socialMedias.find((str) => str.substring(0, 'twitter'.length) === 'twitter');
         const instagram = socialMedias.find((str) => str.substring(0, 'instagram'.length) === 'instagram');
         const openingHours = columns[24];
-        const folderName = columns[0].replaceAll('\'', '-').replaceAll(' ', '-').replaceAll('é', 'e').replaceAll('/', '-').replaceAll('.', '-').replaceAll('!', '').replaceAll('?', '').replaceAll('(', '-').replaceAll(')', '-').replaceAll('â', 'a').replaceAll('ô', 'o').replaceAll('û', 'u').replaceAll('&', '-').replace(/-{2,}/g, '-').replace(/[-]$/, "").toLowerCase();
+        const folderName = columns[0].toLowerCase().replaceAll('\'', '-').replaceAll(' ', '-').replaceAll('\'','-').replaceAll('à','a').replaceAll('é', 'e').replaceAll('/', '-').replaceAll('.', '-').replaceAll('!', '').replaceAll('?', '').replaceAll('(', '-').replaceAll(')', '-').replaceAll('â', 'a').replaceAll('ô', 'o').replaceAll('û', 'u').replaceAll('ê','e').replaceAll('é','e').replaceAll('è','e').replaceAll('ç','c').replaceAll('&', '-').replace(/-{2,}/g, '-').replace(/[-]$/, "");
         let aryContent = [];
 
         aryContent.push(`---`);
