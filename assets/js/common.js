@@ -430,7 +430,10 @@
         zip.folder(`${folderName}`).file(`_index.md`, fileContent);
         
         if (optimiseCheck.checked)
-            zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
+        {
+            await zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
+            await delay(1000);
+        }
         else
         {
             const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
@@ -448,6 +451,10 @@
             let min = dateObj.getMinutes().toString().padStart(2, "0");;
             saveAs(content, `G-Maps-Extract-${year}-${month}-${day}-${hour}-${min}.zip`);
     });
+  }
+
+  function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
   }
   
   async function readFile()
