@@ -174,8 +174,8 @@
   // Upload/download CSV file and populate table
   // ===========================================
 
-  let totalItems = 0;
-  let currentItem = 0;
+  //let totalItems = 0;
+  //let currentItem = 0;
 
   if (fileInput)
   {
@@ -382,10 +382,14 @@
         const dataUrl = canvas.toDataURL("image/jpeg").split(';base64,')[1];
         return dataUrl;
   }
-    
+
   async function downloadFile(fileContent) 
   {
     const rows = parseCSVWithNewlines(fileContent);
+    const FAILED = 0
+    const SUCCEED = 1;
+    const SKIPPED = 3;
+    let promises = [];
 
     // Remove empty last element
     var lastElement = rows.slice(-1);
@@ -393,18 +397,18 @@
 
     var zip = new JSZip();
 
-    totalItems = rows.length - 1;
-    currentItem = 0;
+    let totalItems = rows.length - 1;
+    let currentItem = 1; // Skip item 0 which is the header of the columns
 
-    for (let i = 1; i < rows.length; i++)
+    for (currentItem; currentItem <= totalItems; currentItem++)
     {
-        const columns = rows[i];
+        const columns = rows[currentItem];
         const socialMedias = columns[14].split('\n');
         const facebook = socialMedias.find((str) => str.substring(0, 'facebook'.length) === 'facebook');
         const twitter = socialMedias.find((str) => str.substring(0, 'twitter'.length) === 'twitter');
         const instagram = socialMedias.find((str) => str.substring(0, 'instagram'.length) === 'instagram');
         const openingHours = columns[24];
-        const folderName = columns[0].toLowerCase().replaceAll('\'', '-').replaceAll(' ', '-').replaceAll('\'','-').replaceAll('à','a').replaceAll('é', 'e').replaceAll('/', '-').replaceAll('.', '-').replaceAll('!', '').replaceAll('?', '').replaceAll('(', '-').replaceAll(')', '-').replaceAll('â', 'a').replaceAll('ô', 'o').replaceAll('û', 'u').replaceAll('ê','e').replaceAll('é','e').replaceAll('è','e').replaceAll('ç','c').replaceAll('&', '-').replace(/-{2,}/g, '-').replace(/[-]$/, "");
+        const folderName = columns[0].toLowerCase().replaceAll('\'', '-').replaceAll(' ', '-').replaceAll('\'', '-').replaceAll('à', 'a').replaceAll('é', 'e').replaceAll('/', '-').replaceAll('.', '-').replaceAll('!', '').replaceAll('?', '').replaceAll('(', '-').replaceAll(')', '-').replaceAll('â', 'a').replaceAll('ô', 'o').replaceAll('û', 'u').replaceAll('ê', 'e').replaceAll('é', 'e').replaceAll('è', 'e').replaceAll('ç', 'c').replaceAll('&', '-').replace(/-{2,}/g, '-').replace(/[-]$/, "");
         let aryContent = [];
 
         aryContent.push(`---`);
@@ -438,26 +442,57 @@
         
         if (optimiseCheck.checked && imageUrl)
         {
-            await zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
+          //await zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
             await delay(1000);
+            var promise = getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl).then((data) =>
+            {
+                zip.folder(`${folderName}`).file(`0.jpg`, data, { binary: true });
+                showProgression(SUCCEED, imageUrl);
+            }).catch(error => {
+                debugger;
+                // Handle errors here
+                console.error('Error:', error.message);
+                showProgression(FAILED, imageUrl);
+            });
+            promises.push(promise);
         }
         else
         {
-            const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
-            if (elm) elm.style.color = '#39B642';
+            showProgression(SKIPPED, null);
         }
     };
-
-    zip.generateAsync({type:"blob"})
-        .then(function (content) {
-            let dateObj = new Date();
-            let month = (dateObj.getUTCMonth() + 1).toString().padStart(2, "0");;
-            let day = dateObj.getUTCDate().toString().padStart(2, "0");;
-            let year = dateObj.getUTCFullYear().toString().padStart(4, "0");;
-            let hour = dateObj.getHours().toString().padStart(2, "0");;
-            let min = dateObj.getMinutes().toString().padStart(2, "0");;
-            saveAs(content, `G-Maps-Extractor-${totalItems}-${year}-${month}-${day}-${hour}-${min}.zip`);
+    debugger;
+    Promise.all(promises).then(() => 
+    {
+        debugger;
+        zip.generateAsync({ type: "blob" })
+            .then(function (content) {
+                let dateObj = new Date();
+                let month = (dateObj.getUTCMonth() + 1).toString().padStart(2, "0");;
+                let day = dateObj.getUTCDate().toString().padStart(2, "0");;
+                let year = dateObj.getUTCFullYear().toString().padStart(4, "0");;
+                let hour = dateObj.getHours().toString().padStart(2, "0");;
+                let min = dateObj.getMinutes().toString().padStart(2, "0");;
+                saveAs(content, `G-Maps-Extractor-${totalItems}-${year}-${month}-${day}-${hour}-${min}.zip`);
+        });
+    }).catch((error) =>
+    {
+        console.error("An error occurred:", error);
     });
+
+
+    function showProgression(status, imageUrl) 
+    {
+      const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
+
+        if (elm) elm.style.color = (status == SUCCEED) ? '#39B642' : (status == FAILED) ? '#F11414' : '#129885';
+
+      if (currentItem == totalItems) {
+          progressLabel.textContent = "Fin du traitement";
+      } else {
+          progressLabel.textContent = "Traitement en cours... " + parseInt(currentItem / totalItems * 100) + '%';
+      }
+    }
   }
 
   async function delay(ms) {
@@ -520,8 +555,10 @@
 
   async function getPredictionFromUrl(imageUrl)
   {
-      //const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.replicate.com/v1/predictions';
-      const apiUrl = 'https://proxy.cors.sh/https://api.replicate.com/v1/predictions';
+      const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.replicate.com/v1/predictions'; // rapide mais instable
+    //const apiUrl = 'https://proxy.cors.sh/https://api.replicate.com/v1/predictions'; // rapide mais instable permanent key ?
+    //const apiUrl = 'https://corsproxy.io/?https://api.replicate.com/v1/predictions'; // 
+    //const apiUrl = 'https://corsproxy.org/?https://api.replicate.com/v1/predictions'; // non fonctionnel ?
       const apiToken = 'r8_WsSrh8w9Qp9YQwahxuiNnbWnF47T8rj3ZQ9vx';
       const version = '42fed1c4974146d4d2414e2be2c5277c7fcf05fcc3a73abf41610695738c1d7b';
       const progressLabel = document.querySelector('#progressLabel');
@@ -536,7 +573,7 @@
 
       const requestOptions = {
           headers: {
-              'x-cors-api-key': 'temp_00e06d45fb9f69da4549e34586b971e9',
+            //'x-cors-api-key': 'temp_00e06d45fb9f69da4549e34586b971e9', // utile pour proxy.cors.sh
               'Content-Type': 'application/json',
               'Authorization': `Token ${apiToken}`,
           },
@@ -565,18 +602,17 @@
                                           if (response.data.status == 'succeeded') {
                                               clearInterval(pollingId);
                                               resolve(response.data.output);
-                                              currentItem++;
 
-                                              const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
-                                              if (elm) elm.style.color = '#39B642';
+                                              //const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
+                                              //if (elm) elm.style.color = '#39B642';
                                                   
-                                              if (currentItem == totalItems) {
-                                                    progressLabel.textContent = "Fin du traitement";
-                                              } else {      
-                                                    progressLabel.textContent = "Traitement en cours... " + parseInt(currentItem / totalItems * 100) + '%';
-                                            }  
-                                            console.log(progressLabel.textContent);
-                                        }
+                                              //if (currentItem == totalItems) {
+                                              //      progressLabel.textContent = "Fin du traitement";
+                                              //} else {      
+                                              //      progressLabel.textContent = "Traitement en cours... " + parseInt(currentItem / totalItems * 100) + '%';
+                                              //}  
+                                              console.log(progressLabel.textContent);
+                                          }
                                       })
                                       .catch(error => {
                                           debugger;
