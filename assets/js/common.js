@@ -432,7 +432,7 @@
         if (optimiseCheck.checked)
         {
             await zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
-            await delay(2000);
+            await delay(1000);
         }
         else
         {
@@ -514,7 +514,7 @@
   async function getPredictionFromUrl(imageUrl)
   {
       //const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.replicate.com/v1/predictions';
-      const apiUrl = 'https://api.replicate.com/v1/predictions';
+      const apiUr = 'https://cors-proxy.htmldriven.com/?url=https://api.replicate.com/v1/predictions';
       const apiToken = 'r8_WsSrh8w9Qp9YQwahxuiNnbWnF47T8rj3ZQ9vx';
       const version = '42fed1c4974146d4d2414e2be2c5277c7fcf05fcc3a73abf41610695738c1d7b';
       const progressLabel = document.querySelector('#progressLabel');
