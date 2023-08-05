@@ -514,7 +514,7 @@
   async function getPredictionFromUrl(imageUrl)
   {
       //const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.replicate.com/v1/predictions';
-      const apiUrl = 'https://cors-proxy.htmldriven.com/?url=https://api.replicate.com/v1/predictions';
+      const apiUrl = 'https://thingproxy.freeboard.io/fetch/https://api.replicate.com/v1/predictions';
       const apiToken = 'r8_WsSrh8w9Qp9YQwahxuiNnbWnF47T8rj3ZQ9vx';
       const version = '42fed1c4974146d4d2414e2be2c5277c7fcf05fcc3a73abf41610695738c1d7b';
       const progressLabel = document.querySelector('#progressLabel');
