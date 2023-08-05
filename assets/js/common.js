@@ -376,7 +376,7 @@
         return dataUrl;
   }
     
-  function downloadFile(fileContent) 
+  async function downloadFile(fileContent) 
   {
     const rows = parseCSVWithNewlines(fileContent);
 
@@ -453,7 +453,7 @@
     });
   }
 
-  function delay(ms) {
+  async function delay(ms) {
       return new Promise(resolve => setTimeout(resolve, ms));
   }
   
