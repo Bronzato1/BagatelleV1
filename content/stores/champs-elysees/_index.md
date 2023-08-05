@@ -1,5 +1,5 @@
 ---
-name: CHAMPS ÉLYSÉES
+name: Champs Elysées
 tag: restaurant
 address: Av. Albert Ier 149, 5000 Namur, Belgique
 phone: +32 81 23 14 26

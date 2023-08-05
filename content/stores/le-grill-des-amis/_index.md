@@ -1,5 +1,5 @@
 ---
-name: Le Grill des amiS
+name: Le Grill des amis
 tag: restaurant
 address: Rue Saint-Joseph 10, 5000 Namur, Belgique
 phone: +32 81 61 72 60

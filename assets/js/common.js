@@ -326,11 +326,15 @@
           // Image
           const cell25 = row.insertCell();
           cell25.style = 'background-color: white; border: none;';
-          const element25 = document.createElement('img');
-          element25.style = 'width: 40px; height: 40px; border-radius: 10px; object-fit: cover;';
-          element25.src = columns[25];
-          element25.setAttribute('crossorigin', 'anonymous');
-          cell25.appendChild(element25);
+
+          if (columns[25])
+          {
+              const element25 = document.createElement('img');
+              element25.style = 'width: 40px; height: 40px; max-width: none; border-radius: 10px; object-fit: cover;';
+              element25.src = columns[25];
+              element25.setAttribute('crossorigin', 'anonymous');
+              cell25.appendChild(element25);
+          }
           
           // Name
           const cell0 = row.insertCell();
@@ -349,13 +353,16 @@
           cell10.textContent = columns[10];
 
           // Check
-          const cell99 = row.insertCell();
-          cell99.style = 'background-color: white; border: none;';
-          const element99 = document.createElement("i");
-          element99.setAttribute("data-image-url", columns[25]);
-          element99.classList.add('ion', 'ion-ios-checkmark-circle');
-          element99.style = 'color: #e2e2e2; font-size: 20px;';
-          cell99.appendChild(element99);
+          if (columns[25])
+          {
+              const cell99 = row.insertCell();
+              cell99.style = 'background-color: white; border: none;';
+              const element99 = document.createElement("i");
+              element99.setAttribute("data-image-url", columns[25]);
+              element99.classList.add('ion', 'ion-ios-checkmark-circle');
+              element99.style = 'color: #e2e2e2; font-size: 20px;';
+              cell99.appendChild(element99);
+          }
       }
 
       const countLabel = document.querySelector('#countLabel');
@@ -429,7 +436,7 @@
 
         zip.folder(`${folderName}`).file(`_index.md`, fileContent);
         
-        if (optimiseCheck.checked)
+        if (optimiseCheck.checked && imageUrl)
         {
             await zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
             await delay(1000);
@@ -449,7 +456,7 @@
             let year = dateObj.getUTCFullYear().toString().padStart(4, "0");;
             let hour = dateObj.getHours().toString().padStart(2, "0");;
             let min = dateObj.getMinutes().toString().padStart(2, "0");;
-            saveAs(content, `G-Maps-Extract-${year}-${month}-${day}-${hour}-${min}.zip`);
+            saveAs(content, `G-Maps-Extractor-${totalItems}-${year}-${month}-${day}-${hour}-${min}.zip`);
     });
   }
 
@@ -566,7 +573,7 @@
                                               if (currentItem == totalItems) {
                                                     progressLabel.textContent = "Fin du traitement";
                                               } else {      
-                                                    progressLabel.textContent = "Traitement en cours... " + currentItem / totalItems * 100 + '%';
+                                                    progressLabel.textContent = "Traitement en cours... " + parseInt(currentItem / totalItems * 100) + '%';
                                             }  
                                             console.log(progressLabel.textContent);
                                         }

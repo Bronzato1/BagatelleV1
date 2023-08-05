@@ -1,5 +1,5 @@
 ---
-name: resto du coeur de namur
+name: Resto du coeur de namur
 tag: restaurant
 address: Rue de Bomel, 5000 Namur, Belgique
 phone: +32 81 22 53 23

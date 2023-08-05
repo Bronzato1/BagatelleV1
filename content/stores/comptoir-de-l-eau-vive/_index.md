@@ -1,5 +1,5 @@
 ---
-name: COMPTOIR DE L'EAU VIVE
+name: Comptoir de l'eau vive
 tag: restaurant
 address: Pl. des Jardins de Baseilles 14, 5101 Namur, Belgique
 phone: +32 81 30 65 36
