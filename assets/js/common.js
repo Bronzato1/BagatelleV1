@@ -432,7 +432,7 @@
         if (optimiseCheck.checked)
         {
             await zip.folder(`${folderName}`).file(`0.jpg`, getPredictionFromUrl(imageUrl).then(getBinaryContentFromUrl), { binary: true });
-            await delay(1000);
+            await delay(2000);
         }
         else
         {
@@ -554,8 +554,8 @@
                                           console.log(response.data);
 
                                           if (response.data.status == 'succeeded') {
-                                              resolve(response.data.output);
                                               clearInterval(pollingId);
+                                              resolve(response.data.output);
                                               currentItem++;
 
                                               const elm = document.querySelector('i[data-image-url="' + imageUrl + '"]');
