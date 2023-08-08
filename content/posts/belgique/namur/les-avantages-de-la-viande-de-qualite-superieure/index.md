@@ -3,7 +3,7 @@ title: Les avantages de la viande de qualité supérieure
 description: 
 date: 2023-07-18
 authors: [belgique/namur/thierry]
-stores: [belgique/namur/boucherie/roland-et-fils]
+stores: [belgique/namur/boucherie/roland-fils]
 image: '0.jpg'
 tags: [boucherie]
 ---

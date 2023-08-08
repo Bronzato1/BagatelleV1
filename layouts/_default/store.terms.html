@@ -14,16 +14,13 @@
                 {{ range .Data.Pages.ByParam "name" }}
 
                 <!---------------------------------------------------------------------
-                  {{ .File.Dir }} <-------- example: stores\chateau-de-namur\
-                  {{ .Page.File.Path }} <-- example: stores\chateau-de-namur\_index.md
+                  { { .File.Dir } } <-------- example: stores\chateau-de-namur\
+                  { { .Page.File.Path } } <-- example: stores\chateau-de-namur\_index.md
                 ----------------------------------------------------------------------->
-                {{ $store_folder := replace .File.Dir "\\" "/" }}
-                {{ $image_url := printf "%s%s%s" .Site.BaseURL $store_folder .Params.image }}
 
                 <div class="col col-3 col-w-6 col-t-12 animate">
                     <div class="stores__info">
-                        <a class="stores__image" href="{{ .Permalink }}"><img class="lazy" data-src="{{ $image_url }}" alt="{{ $image_url }}"></a>
-
+                        <a class="stores__image" href="{{ .Permalink }}"><img class="lazy" data-src="{{ partial "image-url" . }}" alt="{{ .Title }}"></a>
                         <a href="/tags/{{ .Params.tag }}/" class="stores__category">{{ .Params.tag }}</a>
                         <div class="stores__meta">
                             <h2 class="stores__name"><a class="stores__link" href="{{ .Permalink }}">{{ .Params.name }}</a></h2>

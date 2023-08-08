@@ -1,0 +1,6 @@
+{{ $image_url := "" }}
+{{ if .File }}
+{{ $store_folder := replace .File.Dir "\\" "/" }}
+{{ $image_url = printf "%s%s%s" .Site.BaseURL $store_folder .Params.image }}
+{{ end }}
+{{ return $image_url }}

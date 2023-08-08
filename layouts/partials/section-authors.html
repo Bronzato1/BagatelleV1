@@ -15,9 +15,7 @@
             <div class="section-authors__box">
             {{ range $authors.ByParam "name" }}
               <a href="{{ .Permalink }}" class="section-authors__image">
-                {{ $author_folder := replace .File.Dir "\\" "/" }}
-                {{ $image_url := printf "%s%s%s" .Site.BaseURL $author_folder .Params.image }}
-                <img class="lazy" data-src="{{ $image_url }}" alt="{{ .Params.name }}">
+                <img class="lazy" data-src="{{ partial "image-url" . }}" alt="{{ .Params.name }}">
               </a>
             {{ end }}
             </div>

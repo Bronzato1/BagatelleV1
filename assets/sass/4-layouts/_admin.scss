@@ -1,0 +1,78 @@
+/* Admin */
+
+#fileButton,
+#fillTableButton,
+#processAllButton,
+#downloadFileButton,
+#resetButton,
+#optimiseButton {
+    background-color: unset;
+    color: var(--button-background-color);
+    border: none;
+    padding: 0px 10px;
+    font-size: 40px;
+}
+
+#progressBar {
+    width: 320px;
+    visibility: hidden;
+}
+
+#progressBar {
+    border-radius: 7px;
+    height: 6px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+#progressBar::-webkit-progress-bar {
+    background-color: var(--button-background-color);
+    border-radius: 7px;
+}
+
+#progressBar::-webkit-progress-value {
+    background-color: black;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+#progressBar::-moz-progress-bar {
+    /* style rules */
+}
+
+
+#tableData thead td:nth-child(1) {
+    border-bottom-color: #F99BFF;
+    border-bottom-width: 3px;
+    background-color: var(--background-color);
+    border: none;
+}
+#tableData thead td:nth-child(2) {
+    border-bottom-color: #C42122;
+    border-bottom-width: 3px;
+    border-top: solid 0 #000;
+    border-top-left-radius: 10px;
+    border-left: solid 0px #000;
+    border-top-left-radius: 10px;
+}
+#tableData thead td:nth-child(3) {
+    border-bottom-color: #43B3E9;
+    border-bottom-width: 3px;
+}
+#tableData thead td:nth-child(4) {
+    border-bottom-color: #39B642;
+    border-bottom-width: 3px;
+}
+#tableData thead td:nth-child(5) {
+    border-bottom-color: #cd2cb2;
+    border-bottom-width: 3px;
+    border-top: solid 0 #000;
+    border-top-right-radius: 10px;
+    border-right: solid 0px #000;
+    width: 150px;
+}
+#tableData thead td:nth-child(6) {
+    border-bottom-color: #000000;
+    border-bottom-width: 3px;
+    background-color: var(--background-color);
+    border: none;
+}

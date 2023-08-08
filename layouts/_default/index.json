@@ -6,9 +6,7 @@
 
     {{ if not (eq .Params.Name nil) }}
       {{ $tag := .Params.Tag }}
-      {{ $store_folder := replace .File.Dir "\\" "/" }}
-      {{ $image_url := printf "%s%s%s" .Site.BaseURL $store_folder .Params.image }}
-      {{ $.Scratch.Add "index" (dict "type" "store" "tag" $tag "title" .Params.Name "content" (printf "%s" $tag | printf "- %s - %s " .Summary | printf "%s %s" .Params.Name | htmlUnescape | plainify) "date" "" "permalink" .Permalink "image" ($image_url | absURL)) }}
+      {{ $.Scratch.Add "index" (dict "type" "store" "tag" $tag "title" .Params.Name "content" (printf "%s" $tag | printf "- %s - %s " .Summary | printf "%s %s" .Params.Name | htmlUnescape | plainify) "date" "" "permalink" .Permalink "image" (partial "image-url" . | absURL)) }}
     {{ end }}
 
 {{ end }}
@@ -22,9 +20,7 @@
       {{ $tag = .  }}
     {{ end }}
 
-    {{ $post_folder := replace .File.Dir "\\" "/" }}
-    {{ $image_url := printf "%s%s%s" .Site.BaseURL $post_folder .Params.image }}
-    {{ $.Scratch.Add "index" (dict "type" "post" "tag" $tag "title" .Title "content" (.Summary | plainify) "date" (.Date | dateFormat "2 January 2006") "permalink" .Permalink "image" ($image_url | absURL)) }}
+    {{ $.Scratch.Add "index" (dict "type" "post" "tag" $tag "title" .Title "content" (.Summary | plainify) "date" (.Date | dateFormat "2 January 2006") "permalink" .Permalink "image" (partial "image-url" . | absURL)) }}
 
 {{ end }}
 

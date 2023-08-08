@@ -14,9 +14,7 @@
         </div>
         {{ end }}
 
-       {{ $post_folder := replace .PrevInSection.File.Dir "\\" "/" }}
-       {{ $image_url := printf "%s%s%s" $.Site.BaseURL $post_folder .PrevInSection.Params.image }}
-        <img class="lazy" data-src="{{ $image_url }}" alt="{{ .PrevInSection.Title }}">
+        <img class="lazy" data-src="{{ partial "image-url" . }}" alt="{{ .PrevInSection.Title }}">
       </a>
       {{ end }}
       <div class="prev__box">
@@ -42,9 +40,7 @@
         </div>
         {{ end }}
 
-        {{ $post_folder := replace .NextInSection.File.Dir "\\" "/" }}
-        {{ $image_url := printf "%s%s%s" $.Site.BaseURL $post_folder .NextInSection.Params.image }}
-        <img class="lazy" data-src="{{ $image_url }}" alt="{{ .NextInSection.Title }}">
+        <img class="lazy" data-src="{{ partial "image-url" . }}" alt="{{ .NextInSection.Title }}">
       </a>
       {{ end }}
     </div>

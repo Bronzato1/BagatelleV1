@@ -32,10 +32,12 @@
     3.10-Sidebar
     3.11-Scroll Button Top
     3.12-Buttons
+    3.13-Icons
 :: 4-Layouts
     4.1-Post Page
     4.2-Authors
     4.3-Tags + Tag Page
+    4.4-Admin
 <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 
@@ -96,7 +98,8 @@
 @import '3-modules/scroll-button-top';
 /* >>>>>>>>>>>>>> :: 3.12-Buttons <<<<<<<<<<<<<<< */
 @import '3-modules/buttons';
-
+/* >>>>>>>>>>>>>> :: 3.13-Icons <<<<<<<<<<<<<<< */
+@import '3-modules/icons';
 
 /* =======================
 :: 4-Layouts
@@ -109,3 +112,5 @@
 @import '4-layouts/stores';
 /* >>>>>>>>>>>>>> :: 4.3-Tags + Tag Page <<<<<<<<<<<<<<< */
 @import '4-layouts/tags-page';
+/* >>>>>>>>>>>>>> :: 4.4-Admin <<<<<<<<<<<<<<< */
+@import '4-layouts/admin';

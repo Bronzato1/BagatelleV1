@@ -16,14 +16,65 @@ paginate = 12
     weight = 1
 
   [[menu.main]]
-    name = "Commerces"
+    name = "Commerçants"
     url = "/stores/"
     weight = 2
 
   [[menu.main]]
-    name = "Catégories"
-    url = "/tags/"
+    parent = "Commerçants"
+    name = "Shopping"
+    pre = "shop"
+    url = "/stores/belgique/namur/shopping/list"
+    weight = 1
+
+  [[menu.main]]
+    parent = "Commerçants"
+    name = "Boulangerie"
+    pre = "bakery"
+    url = "/stores/belgique/namur/boulangerie/list"
+    weight = 2
+
+  [[menu.main]]
+    parent = "Commerçants"
+    name = "Boucherie"
+    pre = "meat"
+    url = "/stores/belgique/namur/boucherie/list"
     weight = 3
+
+  [[menu.main]]
+    parent = "Commerçants"
+    name = "Restaurant"
+    pre = "restaurant"
+    url = "/stores/belgique/namur/restaurant/list"
+    weight = 5
+
+  [[menu.main]]
+    parent = "Commerçants"
+    name = "Chocolatier"
+    pre = "chocolat"
+    url = "/stores/belgique/namur/chocolatier/list"
+    weight = 6
+
+  [[menu.main]]
+    parent = "Commerçants"
+    name = "Glacier"
+    pre = "ice"
+    url = "/stores/belgique/namur/glacier/list"
+    weight = 7
+
+  [[menu.main]]
+    parent = "Commerçants"
+    name = "Massage"
+    pre = "massage"
+    url = "/stores/belgique/namur/massage/list"
+    weight = 7
+
+  [[menu.main]]
+    parent = "Commerçants"
+    name = "Pharmacie"
+    pre = "pill"
+    url = "/stores/belgique/namur/pharmacie/list"
+    weight = 8
 
   [[menu.main]]
     name = "Pages"
@@ -61,7 +112,6 @@ paginate = 12
   logo_dark = "/images/logo-dark.png"
   description = "Danto is a news and magazine Hugo theme"
   color_scheme = "auto" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
-
 
   #-------------------------------
   # Hero Settings
@@ -172,7 +222,6 @@ paginate = 12
 
 [taxonomies]
   author = "authors"
-  store = "stores"
   tag = "tags"
 
 

@@ -1,0 +1,55 @@
+{{ define "main" }}
+s.l
+<!-- begin stores -->
+<section class="section stores">
+
+    <div class="stores__inner">
+        <div class="container">
+
+            <div class="stores__head">
+                <h1 class="stores__title">{{ .Title }}</h1>
+            </div>
+            .Params.Tag: {{ .Params.Tag }} <br />
+            .Params.City: {{ .Params.City }} <br />
+            .Params.Country: {{ .Params.Country }} <br />
+            .Site.Pages: {{ .Site.Pages }} <br />
+            .Data.Pages: {{ .Data.Pages }} <br />
+            .Site.Pages: {{ .Data.Pages }} <br />
+            .Pages: {{ .Pages }} <br />
+
+
+            {{ with .Site.GetPage "/stores/belgique/" }}
+              .Title: {{ .Title }} <br />
+              .RegularPagesRecursive: {{ .RegularPagesRecursive }} <br />
+
+              {{ range .RegularPagesRecursive }}
+                 {{ . }} <br/>
+              {{ end }}
+
+            {{ end }}
+
+
+            <div class="row">
+                {{ range (where (where .Site.Pages "Type" "in" "stores") ".Params.tag" "=" .Params.Tag) }}
+
+                <div class="col col-3 col-w-6 col-t-12 animate">
+                    <div class="stores__info">
+                        <a class="stores__image" href="{{ .Permalink }}"><img class="lazy" data-src="{{ partial "image-url" . }}" alt="{{ .Title }}"></a>
+                        <a href="/tags/{{ .Params.tag }}/" class="stores__category">{{ .Params.tag }}</a>
+                        <div class="stores__meta">
+                            <h2 class="stores__name"><a class="stores__link" href="{{ .Permalink }}">{{ .Params.name }}</a></h2>
+                        </div>
+                        {{ if .Params.address }}
+                        <div class="stores__description">{{ .Params.address }}</div>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- end stores -->
+{{ end }}

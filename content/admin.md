@@ -1,4 +1,4 @@
 ---
 layout: admin
-title: Admin
+title: Administration
 ---

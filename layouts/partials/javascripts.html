@@ -1,22 +1,35 @@
 {{ $script   := resources.Get "js/scripts.js" }}
 {{ $commonJs := resources.Get "js/common.js" }}
 {{ $axiosJs := resources.Get "js/axios.js" }}
-{{ $jszipJs := resources.Get "js/jszip.js" }}
-{{ $jszipUtilsJs := resources.Get "js/jszip-utils.js" }}
-{{ $filesaverJs := resources.Get "js/filesaver.js" }}
 
 {{ if .Site.IsServer }}
 <script src="{{ $script.Permalink }}"></script>
 <script src="{{ $commonJs.Permalink }}"></script>
 <script src="{{ $axiosJs.Permalink }}"></script>
-<script src="{{ $jszipJs.Permalink }}"></script>
-<script src="{{ $jszipUtilsJs.Permalink }}"></script>
-<script src="{{ $filesaverJs.Permalink }}"></script>
 {{ else }}
 <script src="{{ ($script | minify | fingerprint).RelPermalink }}"></script>
 <script src="{{ ($commonJs | minify | fingerprint).RelPermalink }}"></script>
 <script src="{{ ($axiosJs | minify | fingerprint).RelPermalink }}"></script>
-<script src="{{ ($jszipJs | minify | fingerprint).RelPermalink }}"></script>
-<script src="{{ ($jszipUtilsJs | minify | fingerprint).RelPermalink }}"></script>
-<script src="{{ ($filesaverJs | minify | fingerprint).RelPermalink }}"></script>
+{{ end }}
+
+
+{{ if eq (.Title | lower) "administration" }}
+
+    {{ $adminJs := resources.Get "js/admin.js" }}
+    {{ $jszipJs := resources.Get "js/jszip.js" }}
+    {{ $jszipUtilsJs := resources.Get "js/jszip-utils.js" }}
+    {{ $filesaverJs := resources.Get "js/filesaver.js" }}
+
+    {{ if .Site.IsServer }}
+    <script src="{{ $adminJs.Permalink }}"></script>
+    <script src="{{ $jszipJs.Permalink }}"></script>
+    <script src="{{ $jszipUtilsJs.Permalink }}"></script>
+    <script src="{{ $filesaverJs.Permalink }}"></script>
+    {{ else }}
+    <script src="{{ ($adminJs | minify | fingerprint).RelPermalink }}"></script>
+    <script src="{{ ($jszipJs | minify | fingerprint).RelPermalink }}"></script>
+    <script src="{{ ($jszipUtilsJs | minify | fingerprint).RelPermalink }}"></script>
+    <script src="{{ ($filesaverJs | minify | fingerprint).RelPermalink }}"></script>
+    {{ end }}
+
 {{ end }}
