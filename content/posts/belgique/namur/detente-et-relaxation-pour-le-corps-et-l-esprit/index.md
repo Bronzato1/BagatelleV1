@@ -2,9 +2,9 @@
 title: Détente et relaxation pour le corps et l'eprit
 description: Dans notre vie trépidante et souvent stressante, il est essentiel de prendre du temps pour se détendre et se ressourcer. Le massage bien-être est une pratique ancestrale qui offre une parenthèse de calme et de sérénité pour le corps et l'esprit. 
 date: 2023-07-13
-authors: [belgique/namur/thierry]
+author: thierry-langie
 image: '0.jpg'
-stores: [belgique/namur/massage/le-chemin-de-la-sante]
+store: le-chemin-de-la-sante
 tags: [massage]
 featured: true
 ---

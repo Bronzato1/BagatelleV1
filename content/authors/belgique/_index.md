@@ -1,3 +1,4 @@
 ---
-title: Auteurs en Belgique
+title: Belgique
+layout: author.terms
 ---

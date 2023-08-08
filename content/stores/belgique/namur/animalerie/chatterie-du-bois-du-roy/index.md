@@ -7,4 +7,5 @@ mail: chatterieduboisduroy@tvcablenet.be, info@royproducts.be
 location: https://www.google.com/maps?cid=8562866754547029432
 website: http://www.chatterieduboisduroy.be/nos-coordonnees.html
 image: '0.jpg'
+layout: store
 ---

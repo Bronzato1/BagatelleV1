@@ -7,4 +7,5 @@ mail:
 location: https://www.google.com/maps?cid=5549420589340659162
 website: 
 image: '0.jpg'
+layout: store
 ---

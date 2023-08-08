@@ -9,4 +9,5 @@ website: https://instagram.com/boulangerie_patisserie_vranckx?utm_medium=copy_li
 facebook: https://www.facebook.com/vranckxboulangerie/about/
 schedule: 'samedi# 06:30-18:00;dimanche# 06:30-18:00;lundi# Fermé;mardi# Fermé;mercredi# 06:30-18:00;jeudi# 06:30-18:00;vendredi# 06:30-18:00'
 image: '0.jpg'
+layout: store
 ---

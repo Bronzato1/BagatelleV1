@@ -9,4 +9,5 @@ website: http://www.sevimler.be/
 facebook: https://www.facebook.com/sevimler.market/
 schedule: 'samedi# 09:00-19:00;dimanche# 09:00-19:00;lundi# Fermé;mardi# 09:00-19:00;mercredi# 09:00-19:00;jeudi# 09:00-19:00;vendredi# 09:00-19:00'
 image: '0.jpg'
+layout: store
 ---

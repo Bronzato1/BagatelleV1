@@ -9,4 +9,5 @@ website:
 facebook: https://www.facebook.com/boucherie.roland/
 schedule: 'samedi# 09:00-16:00;dimanche# 09:00-12:00;lundi# 08:30-12:30, 14:00-17:00;mardi# 08:30-12:30, 14:00-17:00;mercredi# Fermé;jeudi# 08:30-12:30, 14:00-17:00;vendredi# 08:30-12:30, 14:00-17:00'
 image: '0.jpg'
+layout: store
 ---

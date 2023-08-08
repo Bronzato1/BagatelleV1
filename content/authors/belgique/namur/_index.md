@@ -1,4 +1,4 @@
 ---
-title: Auteurs à Namur
-type: author
+title: Namur
+layout: author.terms
 ---

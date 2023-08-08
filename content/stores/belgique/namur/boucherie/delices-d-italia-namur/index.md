@@ -9,4 +9,5 @@ website: https://delices-ditalia-namur.business.site/?utm_source=gmb&utm_medium=
 facebook: https://www.facebook.com/delicesditalianamur/
 schedule: 'samedi# 09:30-18:30;dimanche# Fermé;lundi# Fermé;mardi# 09:30-18:30;mercredi# 09:30-18:30;jeudi# 09:30-18:30;vendredi# 09:30-18:30'
 image: '0.jpg'
+layout: store
 ---

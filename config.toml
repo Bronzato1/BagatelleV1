@@ -24,56 +24,56 @@ paginate = 12
     parent = "Commerçants"
     name = "Shopping"
     pre = "shop"
-    url = "/stores/belgique/namur/shopping/list"
+    url = "/stores/belgique/namur/shopping/"
     weight = 1
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Boulangerie"
     pre = "bakery"
-    url = "/stores/belgique/namur/boulangerie/list"
+    url = "/stores/belgique/namur/boulangerie/"
     weight = 2
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Boucherie"
     pre = "meat"
-    url = "/stores/belgique/namur/boucherie/list"
+    url = "/stores/belgique/namur/boucherie/"
     weight = 3
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Restaurant"
     pre = "restaurant"
-    url = "/stores/belgique/namur/restaurant/list"
+    url = "/stores/belgique/namur/restaurant/"
     weight = 5
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Chocolatier"
     pre = "chocolat"
-    url = "/stores/belgique/namur/chocolatier/list"
+    url = "/stores/belgique/namur/chocolatier/"
     weight = 6
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Glacier"
     pre = "ice"
-    url = "/stores/belgique/namur/glacier/list"
+    url = "/stores/belgique/namur/glacier/"
     weight = 7
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Massage"
     pre = "massage"
-    url = "/stores/belgique/namur/massage/list"
+    url = "/stores/belgique/namur/massage/"
     weight = 7
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Pharmacie"
     pre = "pill"
-    url = "/stores/belgique/namur/pharmacie/list"
+    url = "/stores/belgique/namur/pharmacie/"
     weight = 8
 
   [[menu.main]]
@@ -108,6 +108,7 @@ paginate = 12
 
 
 [params]
+  mainSections = ["posts"]
   logo = "/images/logo.png" # You can add own logo. For example "/images/logo.png".
   logo_dark = "/images/logo-dark.png"
   description = "Danto is a news and magazine Hugo theme"
@@ -134,11 +135,6 @@ paginate = 12
   [[params.tag]]
     tag = "boulangerie"
 
-  [[params.tag]]
-    tag = "shopping"
-
-  [[params.tag]]
-    tag = "sport"
 
   # You can add many tag sections to the homepage; each section will show the recent posts by the tag.
 
@@ -221,7 +217,6 @@ paginate = 12
 
 
 [taxonomies]
-  author = "authors"
   tag = "tags"
 
 

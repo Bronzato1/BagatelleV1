@@ -1,9 +1,9 @@
 ---
 title: Découverte d'un chocolatier à Namur
 date: 2023-07-23
-authors: [belgique/namur/thierry]
+author: thierry-langie
 image: '2.jpg'
-stores: [belgique/namur/chocolaterie/galler-namur]
+store: boutique-galler-namur
 tags: [chocolaterie]
 featured: true
 ---

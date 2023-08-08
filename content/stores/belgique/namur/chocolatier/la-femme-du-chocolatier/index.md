@@ -9,4 +9,5 @@ website: https://www.facebook.com/Lafemmeduchocolatier/
 facebook: https://www.facebook.com/Lafemmeduchocolatier/
 schedule: 'samedi# Fermé;dimanche# Fermé;lundi# Fermé;mardi# Fermé;mercredi# Fermé;jeudi# Fermé;vendredi# Fermé'
 image: '0.jpg'
+layout: store
 ---

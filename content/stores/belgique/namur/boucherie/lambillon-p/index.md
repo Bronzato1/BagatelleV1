@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=12643126011654588237
 website: 
 schedule: 'samedi# 08:30-18:00;dimanche# Fermé;lundi# Fermé;mardi# 08:30-18:00;mercredi# 08:30-18:00;jeudi# 08:30-18:00;vendredi# 08:30-18:00'
 image: '0.jpg'
+layout: store
 ---

@@ -7,4 +7,5 @@ mail: jjdel@jjd.be, jjd@jjdelvaux.be, commande@jjdelvaux.be
 location: https://www.google.com/maps?cid=14605587964154894027
 website: http://www.jjdelvaux.be/contactez-nous/
 image: '0.jpg'
+layout: store
 ---

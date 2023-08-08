@@ -9,4 +9,5 @@ website: https://www.facebook.com/BoulangeriePatisserieSiscot
 facebook: https://www.facebook.com/BoulangeriePatisserieSiscot/
 schedule: 'samedi# 06:30-18:30;dimanche# 06:30-18:30;lundi# 06:30-18:30;mardi# Fermé;mercredi# 06:30-18:30;jeudi# 06:30-18:30;vendredi# 06:30-18:30'
 image: '0.jpg'
+layout: store
 ---

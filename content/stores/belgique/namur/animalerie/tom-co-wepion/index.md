@@ -9,4 +9,5 @@ website: https://www.tomandco.com/fr/winkels/l/namur/chaussee-de-dinant-322/2898
 facebook: https://www.facebook.com/TomAndCoLaPlante/
 schedule: 'samedi# 09:00-18:00;dimanche# Fermé;lundi# 09:00-18:00;mardi# 09:00-18:00;mercredi# 09:00-18:00;jeudi# 09:00-18:00;vendredi# 09:00-18:00'
 image: '0.jpg'
+layout: store
 ---

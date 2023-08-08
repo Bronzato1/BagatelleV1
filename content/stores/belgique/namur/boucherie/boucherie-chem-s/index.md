@@ -9,4 +9,5 @@ website:
 facebook: https://www.facebook.com/BOUCHERIEChemsHALAL/
 schedule: 'samedi# 09:00-19:00;dimanche# 09:00-19:00;lundi# 09:00-19:00;mardi# 09:00-19:00;mercredi# 09:00-19:00;jeudi# 09:00-19:00;vendredi# 09:00-19:00'
 image: '0.jpg'
+layout: store
 ---

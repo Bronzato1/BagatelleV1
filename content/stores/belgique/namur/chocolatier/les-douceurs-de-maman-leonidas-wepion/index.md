@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=3679267487068877092
 website: https://www.leonidas.com/
 schedule: 'samedi# 09:30-12:30, 13:00-18:00;dimanche# Fermé;lundi# 09:30-12:30, 13:00-18:00;mardi# 09:30-12:30, 13:00-18:00;mercredi# 09:30-12:30, 13:00-18:00;jeudi# 09:30-12:30, 13:00-18:00;vendredi# 09:30-12:30, 13:00-18:00'
 image: '0.jpg'
+layout: store
 ---

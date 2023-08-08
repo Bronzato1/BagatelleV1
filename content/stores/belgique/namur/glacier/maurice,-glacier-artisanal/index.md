@@ -9,4 +9,5 @@ website:
 facebook: https://www.facebook.com/mauriceglacier/
 instagram: https://www.instagram.com/mauriceglaciernamur/
 image: '0.jpg'
+layout: store
 ---

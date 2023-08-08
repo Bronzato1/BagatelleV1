@@ -10,4 +10,5 @@ facebook: https://www.facebook.com/glacetronome/
 instagram: https://www.instagram.com/glacetronome_namur/
 schedule: 'dimanche# 12:30-21:30;lundi# 12:30-21:30;mardi# 12:30-21:30;mercredi# 12:30-21:30;jeudi# 12:30-21:30;vendredi# 12:30-21:30;samedi# 12:30-21:30'
 image: '0.jpg'
+layout: store
 ---

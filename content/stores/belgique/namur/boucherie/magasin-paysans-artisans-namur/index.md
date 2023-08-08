@@ -9,4 +9,5 @@ website:
 facebook: https://www.facebook.com/MagasinPaysansArtisansNamur/
 schedule: 'samedi# 09:00-18:30;dimanche# Fermé;lundi# 12:00-18:30;mardi# 10:30-18:30;mercredi# 10:30-18:30;jeudi# 10:30-18:30;vendredi# 10:30-18:30'
 image: '0.jpg'
+layout: store
 ---

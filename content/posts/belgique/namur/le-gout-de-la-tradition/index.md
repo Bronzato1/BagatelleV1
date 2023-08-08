@@ -2,8 +2,8 @@
 title: Le goût de la tradition
 description: Bonjour à tous, aujourd'hui je voudrais vous parler de la boulangerie de mon quartier, qui est une véritable pépite pour les amateurs de pain et de viennoiseries. Il s'agit de la boulangerie "Le Pain Quotidien".
 date: 2023-07-25
-stores: [belgique/namur/boulangerie/le-pain-quotidien]
-authors: [belgique/namur/thierry]
+store: le-pain-quotidien
+author: thierry-langie
 image: '0.jpg'
 tags: [boulangerie]
 featured: true

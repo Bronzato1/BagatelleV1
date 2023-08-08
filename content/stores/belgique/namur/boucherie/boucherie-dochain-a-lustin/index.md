@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=5764605308287982496
 website: http://facebook.com/boucheriedochain
 schedule: 'samedi# Fermé;dimanche# Fermé;lundi# Fermé;mardi# Fermé;mercredi# Fermé;jeudi# Fermé;vendredi# Fermé'
 image: '0.jpg'
+layout: store
 ---

@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=7362577496359150479
 website: https://fromavin.be/
 schedule: 'samedi# Fermé;dimanche# Fermé;lundi# Fermé;mardi# Fermé;mercredi# Fermé;jeudi# Fermé;vendredi# Fermé'
 image: '0.jpg'
+layout: store
 ---

@@ -1,4 +1,4 @@
 ---
-title: Commerçants de Belgique
-layout: store.list
+title: Commerçants en Belgique
+layout: store.terms
 ---

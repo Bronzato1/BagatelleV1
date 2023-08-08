@@ -1,9 +1,9 @@
 ---
 title: Comment se déroule une séance de massage Tui Na traditionnel
 date: 2023-07-27
-authors: [belgique/namur/thierry]
+author: thierry-langie
 image: '0.jpg'
-stores: [belgique/namur/massage/le-chemin-de-la-sante]
+store: le-chemin-de-la-sante
 tags: [massage]
 ---
 Une séance de massage Tui Na traditionnel commence toujours par un bilan énergétique. Ce bilan permettra de prodiguer des soins par le massage, mais sera également un indicateur important pour toutes les autres pratiques de la médecine traditionnelle chinoise. Il permet de dégager des caractéristiques qui serviront de guide pour la mise en pratique à savoir si la personne est en plénitude ou en déficience, chaude ou froide, s’il y a des troubles internes ou externes et si la pathologie est de type yin ou yang. Ce “diagnostic” permet de déduire les équilibres et déséquilibres afin de pouvoir réguler la circulation énergétique par la pratique.

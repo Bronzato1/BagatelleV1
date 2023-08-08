@@ -5,7 +5,22 @@
     <div class="row">
       <div class="col col-12">
         <div class="section-authors__inner">
-          {{ $authors := ($.Site.GetPage "taxonomyTerm" "authors").Pages }}
+
+        <!--
+              Avant:
+              { { $authors := ($.Site.GetPage "taxonomyTerm" "authors").Pages }}
+              Problème:
+              on ramasse trop de choses...
+        -->
+
+        {{ $authorsTree := (where $.Site.Pages "Type" "in" "authors") }}
+        {{ $authors := default (slice) }}
+
+        {{ range $authorsTree }}
+            {{ if eq (len .Pages) 0 }}
+                {{ $authors = $authors | append . }}
+            {{ end }}
+        {{ end }}
 
           {{ if .Site.Params.authors_section.section_title }}
           <h3 class="section-authors__title">{{ .Site.Params.authors_section.section_title }}</h3>

@@ -10,4 +10,5 @@ facebook: https://www.facebook.com/auptitgourmandnamur/
 instagram: https://www.instagram.com/au.ptit.gourmand/
 schedule: 'samedi# Fermé;dimanche# Fermé;lundi# Fermé;mardi# Fermé;mercredi# Fermé;jeudi# Fermé;vendredi# Fermé'
 image: '0.jpg'
+layout: store
 ---

@@ -9,4 +9,5 @@ website: https://www.poilsetplumes.be/flawinne
 facebook: https://www.facebook.com/profile.php?id=100067967416909
 schedule: 'samedi# 09:00-18:00;dimanche# Fermé;lundi# 09:00-18:00;mardi# 09:00-18:00;mercredi# 09:00-18:00;jeudi# 09:00-18:00;vendredi# 09:00-18:00'
 image: '0.jpg'
+layout: store
 ---

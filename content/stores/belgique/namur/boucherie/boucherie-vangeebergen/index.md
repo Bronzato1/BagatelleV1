@@ -9,4 +9,5 @@ website: https://www.boucherie-vangeebergen.be/
 facebook: https://www.facebook.com/boucherievangeebergen/
 schedule: 'samedi# 08:30-18:30;dimanche# 08:30-12:30;lundi# 08:30-18:30;mardi# Fermé;mercredi# 08:30-18:30;jeudi# 08:30-18:30;vendredi# 08:30-18:30'
 image: '0.jpg'
+layout: store
 ---

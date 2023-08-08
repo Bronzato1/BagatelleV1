@@ -1,3 +1,4 @@
 ---
-title: Auteurs à Liège
+title: Liège
+layout: author.terms
 ---

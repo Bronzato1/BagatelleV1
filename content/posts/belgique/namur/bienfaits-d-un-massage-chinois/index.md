@@ -2,8 +2,8 @@
 title: Les bienfaits d'un massage chinois traditionnel
 description: Le massage chinois est une pratique ancienne qui a de nombreux bienfaits pour la santé physique et mentale. 
 date: 2023-07-27
-authors: [belgique/namur/thierry]
-stores: [belgique/namur/massage/le-chemin-de-la-sante]
+author: thierry-langie
+store: le-chemin-de-la-sante
 image: '0.jpg'
 featured: true
 tags: [massage]

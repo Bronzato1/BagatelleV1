@@ -9,4 +9,5 @@ website: http://www.tendanceglacee.be/
 facebook: https://translate.google.com/translate?hl=en&amp;sl=fr&amp;u=https://www.facebook.com/TendanceGlacee/photos/a.480919565309260/3165973936803796/%3Ftype%3D3&amp;prev=search&amp;pto=aue
 schedule: 'dimanche# 10:00-20:00;lundi# Fermé;mardi# 11:00-18:30;mercredi# 11:00-18:30;jeudi# 11:00-18:30;vendredi# 11:00-21:30;samedi# 10:00-21:30'
 image: '0.jpg'
+layout: store
 ---

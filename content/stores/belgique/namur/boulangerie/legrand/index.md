@@ -9,4 +9,5 @@ website:
 facebook: https://www.facebook.com/boulangerielegrand/
 schedule: 'samedi# 09:00-14:00;dimanche# Fermé;lundi# Fermé;mardi# 09:00-18:00;mercredi# 09:00-18:00;jeudi# 09:00-18:00;vendredi# 09:00-18:00'
 image: '0.jpg'
+layout: store
 ---

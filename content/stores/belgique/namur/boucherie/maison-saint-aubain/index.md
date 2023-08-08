@@ -9,4 +9,5 @@ website: http://www.maison-saint-aubain.be/
 facebook: https://www.facebook.com/LaMaisonSaintAubain/
 schedule: 'samedi# 07:00-18:30;dimanche# Fermé;lundi# 08:00-18:30;mardi# 08:00-18:30;mercredi# 08:00-18:30;jeudi# 08:00-18:30;vendredi# 08:00-18:30'
 image: '0.jpg'
+layout: store
 ---

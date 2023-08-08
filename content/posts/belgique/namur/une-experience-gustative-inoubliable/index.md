@@ -2,8 +2,8 @@
 title: Une expérience gustative inoubliable
 description: L'été est enfin arrivé et quoi de mieux que de déguster une délicieuse glace pour se rafraîchir et se régaler ? Si vous êtes à Jambes, en Belgique, ne cherchez pas plus loin, le glacier Le Glacetronome est l'endroit idéal pour satisfaire vos papilles et vivre une expérience gustative inoubliable.
 date: 2023-07-09
-authors: [belgique/namur/thierry]
-stores: [belgique/namur/glacier/le-glacetronome]
+author: thierry-langie
+store: le-glacetronome
 image: '0.jpg'
 tags: [glacier]
 ---

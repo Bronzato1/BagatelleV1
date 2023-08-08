@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=6154743050993525324
 website: https://www.facebook.com/Dogs-folies-salon-de-toilettage-340094876200253/
 schedule: 'samedi# 09:30-15:00;dimanche# Fermé;lundi# Fermé;mardi# 09:30-18:00;mercredi# 09:30-18:00;jeudi# 09:30-18:00;vendredi# 09:30-18:00'
 image: '0.jpg'
+layout: store
 ---

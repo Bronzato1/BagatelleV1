@@ -9,4 +9,5 @@ website: https://www.poilsetplumes.be/waret-la-chaussee
 facebook: https://www.facebook.com/Poilsetplumeswaret/
 schedule: 'samedi# 09:30-18:00;dimanche# 09:30-12:30;lundi# 13:00-18:00;mardi# 09:30-18:00;mercredi# 09:30-18:00;jeudi# 09:30-18:00;vendredi# 09:30-18:00'
 image: '0.jpg'
+layout: store
 ---

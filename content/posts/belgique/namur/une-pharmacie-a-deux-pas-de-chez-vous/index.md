@@ -2,8 +2,8 @@
 title: Une pharmacie à deux pas de chez vous
 description: Dans cet article, nous allons explorer les différents services offerts par la pharmacie du centre à Jambes, qui la rendent si précieuse pour les résidents de notre ville.
 date: 2023-05-13
-authors: [belgique/namur/thierry]
-stores: [belgique/namur/pharmacie/pharmacie-du-centre-brisbois]
+author: thierry-langie
+store: pharmacie-du-centre-brisbois
 image: '0.jpg'
 tags: [pharmacie]
 featured: true

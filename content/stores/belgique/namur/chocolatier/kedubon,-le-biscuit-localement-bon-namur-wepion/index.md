@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=17930451409341719336
 website: http://www.kedubon.be/
 facebook: https://www.facebook.com/GGLafontaine/
 image: '0.jpg'
+layout: store
 ---

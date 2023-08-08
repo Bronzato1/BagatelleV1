@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Catégories on Bagatelle</title>
+    <link>http://example.org/tags/</link>
+    <description>Recent content in Catégories on Bagatelle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>massage</title>
+      <link>http://example.org/tags/massage/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/massage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boulangerie</title>
+      <link>http://example.org/tags/boulangerie/</link>
+      <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/boulangerie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chocolaterie</title>
+      <link>http://example.org/tags/chocolaterie/</link>
+      <pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/chocolaterie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boucherie</title>
+      <link>http://example.org/tags/boucherie/</link>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/boucherie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sspport</title>
+      <link>http://example.org/tags/sspport/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/sspport/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>glacier</title>
+      <link>http://example.org/tags/glacier/</link>
+      <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/glacier/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>restaurant</title>
+      <link>http://example.org/tags/restaurant/</link>
+      <pubDate>Tue, 04 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/restaurant/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pharmacie</title>
+      <link>http://example.org/tags/pharmacie/</link>
+      <pubDate>Sat, 13 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/pharmacie/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

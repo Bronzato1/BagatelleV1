@@ -10,4 +10,5 @@ facebook: https://www.facebook.com/difalux/
 instagram: https://www.instagram.com/difalux/
 schedule: 'samedi# 08:00-18:00;dimanche# Fermé;lundi# Fermé;mardi# 08:00-18:00;mercredi# 08:00-18:00;jeudi# 08:00-18:00;vendredi# 08:00-18:00'
 image: '0.jpg'
+layout: store
 ---

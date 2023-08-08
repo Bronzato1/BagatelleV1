@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=5034046023986258870
 website: https://www.facebook.com/profile.php?id=100075663657234
 facebook: https://www.facebook.com/p/Boucherie-Poissonnerie-Abdel-Nivelles-100075663657234/
 image: '0.jpg'
+layout: store
 ---

@@ -2,8 +2,8 @@
 title: Un Voyage Gastronomique Inoubliable
 description: Une expérience gastronomique unique, mettant en valeur les délices de la cuisine traditionnelle française, réinventée avec une touche contemporaine.
 date: 2023-07-04
-authors: [belgique/namur/thierry]
-stores: [belgique/namur/restaurant/les-terrasses-de-l-ecluse]
+author: thierry-langie
+store: les-terrasses-de-l-ecluse
 image: '0.jpg'
 tags: [restaurant]
 ---

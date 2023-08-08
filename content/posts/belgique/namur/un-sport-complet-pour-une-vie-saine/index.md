@@ -2,8 +2,8 @@
 title: Un sport complet pour une vie saine
 description: Avez-vous déjà envisagé de vous lancer dans le tennis ? Ce sport passionnant et dynamique offre de nombreux bienfaits pour la santé physique et mentale. Que vous soyez débutant ou joueur expérimenté, le tennis est une activité plaisante qui vous aidera à rester en forme tout en vous amusant.
 date: 2023-07-12
-authors: [belgique/namur/thierry]
-stores: [belgique/namur/sport/tennis-de-la-citadelle]
+author: thierry-langie
+store: tennis-de-la-citadelle
 image: '0.jpg'
 tags: [sport]
 ---

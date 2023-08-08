@@ -1,8 +1,17 @@
-{{ if .Params.stores }}
+{{ if .Params.store }}
 <div class="widget-sidebar widget-post-store">
-  {{ range first 1 .Params.stores }}
-  {{ with $.Site.GetPage "taxonomyTerm" (printf "stores/%s" (urlize .)) }}
+    
+  {{ with .Params.store }}
 
+  <!--
+      Autre façon de rechercher:
+      { { with $.Site.GetPage (printf "stores/%s" (urlize .)) }}
+  -->
+
+  {{ $store := index (where (where $.Site.Pages "Type" "in" "stores") ".File.ContentBaseName" "=" .) 0 }}
+
+  {{ with $store }}
+  
   {{ if .Params.image }}
   <div class="post-store-image">
     <a href="{{ .Permalink }}" class="post__store__image">

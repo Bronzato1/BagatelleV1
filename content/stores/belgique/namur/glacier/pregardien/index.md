@@ -7,4 +7,5 @@ mail: e@hotmail.com
 location: https://www.google.com/maps?cid=1083550709150504716
 website: http://www.leglacierdenamur.be/
 image: '0.jpg'
+layout: store
 ---

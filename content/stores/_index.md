@@ -1,4 +1,4 @@
 ---
-title: Commerces
-layout: store.list
+title: Commerçants
+layout: store.terms
 ---

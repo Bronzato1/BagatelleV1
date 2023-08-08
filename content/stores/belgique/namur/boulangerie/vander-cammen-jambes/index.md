@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=1795110873496888327
 website: http://www.vandercammen.be/
 schedule: 'samedi# 07:30-17:00;dimanche# 07:30-13:00;lundi# 07:30-17:00;mardi# 07:30-17:00;mercredi# 07:30-17:00;jeudi# Fermé;vendredi# 07:30-17:00'
 image: '0.jpg'
+layout: store
 ---

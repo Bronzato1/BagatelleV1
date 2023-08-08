@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=3005878517126312782
 website: https://protectiondesoiseaux.be/
 schedule: 'samedi# 10:00-18:00;dimanche# Fermé;lundi# 09:00-17:00;mardi# 09:00-18:00;mercredi# 09:00-18:00;jeudi# 09:00-18:00;vendredi# 09:00-18:00'
 image: '0.jpg'
+layout: store
 ---

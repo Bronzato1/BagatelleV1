@@ -7,4 +7,5 @@ mail: info@confiseriegourmande.be
 location: https://www.google.com/maps?cid=5645661676932131484
 website: http://confiseriegourmande.be/
 image: '0.jpg'
+layout: store
 ---

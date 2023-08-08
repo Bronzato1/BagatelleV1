@@ -308,6 +308,7 @@
             }
         
             aryContent.push(`image: '0.jpg'`);
+            aryContent.push(`layout: store`);
             aryContent.push(`---`);
         
             const fileContent = aryContent.join('\n');
@@ -426,9 +427,9 @@
   }
     async function getPredictionFromUrl(imageUrl)
     {
-    //const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.replicate.com/v1/predictions'; // rapide mais instable
-      const apiUrl = 'https://proxy.cors.sh/https://api.replicate.com/v1/predictions'; // rapide mais instable permanent key ?
-    //const apiUrl = 'https://corsproxy.io/?https://api.replicate.com/v1/predictions'; // 
+    //const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api.replicate.com/v1/predictions';
+    //const apiUrl = 'https://proxy.cors.sh/https://api.replicate.com/v1/predictions'; // permanent key ?
+      const apiUrl = 'https://corsproxy.io/?https://api.replicate.com/v1/predictions'; // 
     //const apiUrl = 'https://corsproxy.org/?https://api.replicate.com/v1/predictions'; // non fonctionnel ?
       const apiToken = 'r8_WsSrh8w9Qp9YQwahxuiNnbWnF47T8rj3ZQ9vx';
       const version = '42fed1c4974146d4d2414e2be2c5277c7fcf05fcc3a73abf41610695738c1d7b';

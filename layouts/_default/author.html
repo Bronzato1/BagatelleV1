@@ -33,16 +33,26 @@
 
   </div>
 
-  <div class="container">
-    <h2 class="author__posts__count">{{ len .Pages }} {{ if lt (len .Pages) 2 }}Post{{ else }}Posts{{ end }}</h2>
+    
+    <!--
+        Exemple ci-dessous, avec authors: [belgique/namur/thierry]
+        { { $t := slice "belgique/namur/thierry" }}
+        { { $data := (where (where .Site.Pages "Type" "in" "posts") ".Params.authors" "intersect" $t ) }}
+    -->
+
+    {{ $postsTree := (where (where .Site.Pages "Type" "in" "posts") ".Params.author" "=" .File.ContentBaseName ) }}
+    {{ $postsPages := partial "page-crawler" (dict "context" $postsTree) }}
+
+    <div class="container">
+    <h2 class="author__posts__count">{{ len $postsPages }} {{ if lt (len $postsPages) 2 }}Post{{ else }}Posts{{ end }}</h2>
     <div class="row animate">
-      {{ range .Data.Pages }}
-      <div class="col col-4 col-d-6 col-t-12">
-        {{ partial "article.html" (dict "context" .) }}
-      </div>
-      {{ end }}
+        {{ range $postsPages }}
+        <div class="col col-4 col-d-6 col-t-12">
+            {{ partial "article.html" (dict "context" .) }}
+        </div>
+        {{ end }}
     </div>
-  </div>
+   </div>
 
 </section>
 <!-- end author -->

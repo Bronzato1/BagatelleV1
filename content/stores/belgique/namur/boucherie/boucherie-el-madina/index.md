@@ -9,4 +9,5 @@ website:
 facebook: https://www.facebook.com/1902350499852822/posts/poms-et-hawai-c-la-base-/2988919381195923/
 schedule: 'samedi# 09:30-19:00;dimanche# 09:30-19:00;lundi# 09:30-19:00;mardi# 09:30-19:00;mercredi# 09:30-19:00;jeudi# 09:30-19:00;vendredi# 09:30-19:00'
 image: '0.jpg'
+layout: store
 ---

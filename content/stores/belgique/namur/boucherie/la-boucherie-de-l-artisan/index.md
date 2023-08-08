@@ -10,4 +10,5 @@ facebook: https://www.facebook.com/boucheriedelArtisan/
 instagram: https://www.instagram.com/la_boucherie_de_l_artisan/
 schedule: 'samedi# 09:00-18:00;dimanche# 09:00-12:30;lundi# Fermé;mardi# Fermé;mercredi# 09:00-18:00;jeudi# 09:00-18:00;vendredi# 09:00-18:00'
 image: '0.jpg'
+layout: store
 ---

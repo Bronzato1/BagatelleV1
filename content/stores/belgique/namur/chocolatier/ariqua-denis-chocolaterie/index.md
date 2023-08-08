@@ -10,4 +10,5 @@ facebook: https://www.facebook.com/AriquaDenisChocolatier/
 instagram: https://translate.google.com/translate?hl=en&amp;sl=fr&amp;u=https://www.instagram.com/ariqua_denis_chocolatier/reels/&amp;prev=search&amp;pto=aue
 schedule: 'samedi# Fermé;dimanche# Fermé;lundi# Fermé;mardi# Fermé;mercredi# Fermé;jeudi# Fermé;vendredi# Fermé'
 image: '0.jpg'
+layout: store
 ---

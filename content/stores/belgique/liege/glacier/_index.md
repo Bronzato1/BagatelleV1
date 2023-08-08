@@ -1,3 +1,0 @@
----
-title: Glaciers de Liège
----

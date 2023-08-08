@@ -10,4 +10,5 @@ facebook: https://www.facebook.com/people/Neuhaus/100090309482511/
 instagram: https://www.instagram.com/neuhauschocolates/?hl=en
 schedule: 'samedi# 10:00-18:00;dimanche# Fermé;lundi# 10:00-14:00, 14:30-18:00;mardi# 10:00-14:00, 14:30-18:00;mercredi# 10:00-14:00, 14:30-18:00;jeudi# 10:00-14:00, 14:30-18:00;vendredi# 10:00-18:00'
 image: '0.jpg'
+layout: store
 ---

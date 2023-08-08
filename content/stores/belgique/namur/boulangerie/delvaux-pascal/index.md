@@ -9,4 +9,5 @@ website: https://www.facebook.com/Boulangerie-Patisserie-Delvaux-Pascal-69082679
 facebook: https://www.facebook.com/profile.php?id=100063487064878
 schedule: 'samedi# 07:00-18:30;dimanche# 06:00-17:00;lundi# Fermé;mardi# Fermé;mercredi# 07:00-18:30;jeudi# 07:00-18:00;vendredi# 07:00-18:30'
 image: '0.jpg'
+layout: store
 ---

@@ -62,13 +62,25 @@
   </div>
 
   <div class="container">
-    <h2 class="store__posts__count">{{ len .Pages }} {{ if lt (len .Pages) 2 }}article{{ else }}articles{{ end }}</h2>
+
+    <!--
+    Exemple ci-dessous, pour stores: [le-chemin-de-la-sante]
+    { { $t := slice "le-chemin-de-la-sante" }}
+    { { $data := (where (where .Site.Pages "Type" "in" "posts") ".Params.stores" "intersect" $t ) }}
+    -->
+
+    {{ $postsTree := (where (where .Site.Pages "Type" "in" "posts") ".Params.store" "=" .File.ContentBaseName ) }}
+    {{ $postsPages := partial "page-crawler" (dict "context" $postsTree) }}
+
+    <h2 class="store__posts__count">{{ len $postsPages }} {{ if lt (len $postsPages) 2 }}article{{ else }}articles{{ end }}</h2>
+    
     <div class="row animate">
-      {{ range .Data.Pages }}
-      <div class="col col-4 col-d-6 col-t-12">
-        {{ partial "article.html" (dict "context" .) }}
-      </div>
-      {{ end }}
+
+        {{ range $postsPages }}
+        <div class="col col-4 col-d-6 col-t-12">
+            {{ partial "article.html" (dict "context" .) }}
+        </div>
+        {{ end }}
     </div>
   </div>
 

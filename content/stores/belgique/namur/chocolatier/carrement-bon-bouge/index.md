@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=11589809104136697158
 website: http://www.carrementbon.be/
 schedule: 'samedi# Fermé;dimanche# Fermé;lundi# Fermé;mardi# Fermé;mercredi# Fermé;jeudi# Fermé;vendredi# 07:00-18:00'
 image: '0.jpg'
+layout: store
 ---

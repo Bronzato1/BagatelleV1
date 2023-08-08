@@ -9,4 +9,5 @@ website: http://www.poilsetplumes.be/
 facebook: https://www.facebook.com/mediationanimale.lucky/
 schedule: 'samedi# 09:30-18:30;dimanche# Fermé;lundi# 09:30-18:30;mardi# 09:30-18:30;mercredi# 09:30-18:30;jeudi# 09:30-18:30;vendredi# 09:30-18:30'
 image: '0.jpg'
+layout: store
 ---

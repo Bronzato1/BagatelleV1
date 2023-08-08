@@ -9,4 +9,5 @@ website: https://www.facebook.com/fromagerielalpagejambes/
 facebook: https://www.facebook.com/fromagerielalpagejambes/
 schedule: 'samedi# 09:00-17:00;dimanche# Fermé;lundi# 10:00-18:00;mardi# 09:30-18:00;mercredi# 09:30-13:00;jeudi# 09:30-18:00;vendredi# 09:30-18:00'
 image: '0.jpg'
+layout: store
 ---

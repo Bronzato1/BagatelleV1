@@ -9,4 +9,5 @@ website:
 facebook: https://www.facebook.com/fermelustin/
 schedule: 'samedi# 09:00-16:30;dimanche# Fermé;lundi# Fermé;mardi# Fermé;mercredi# Fermé;jeudi# Fermé;vendredi# 09:00-16:30'
 image: '0.jpg'
+layout: store
 ---

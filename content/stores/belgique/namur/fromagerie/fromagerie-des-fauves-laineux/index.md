@@ -10,4 +10,5 @@ facebook: https://www.facebook.com/FauvesLaineux/
 instagram: https://www.instagram.com/lesfauveslaineux/
 schedule: 'samedi# 10:00-13:30;dimanche# Fermé;lundi# Fermé;mardi# Fermé;mercredi# Fermé;jeudi# Fermé;vendredi# Fermé'
 image: '0.jpg'
+layout: store
 ---

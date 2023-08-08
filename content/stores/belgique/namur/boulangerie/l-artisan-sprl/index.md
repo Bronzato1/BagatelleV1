@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=3945881616586677558
 website: https://trendstop.levif.be/fr/detail/897587619/lartisan.aspx
 schedule: 'samedi# Fermé;dimanche# Fermé;lundi# 08:00-17:30;mardi# 08:00-17:30;mercredi# 08:00-17:30;jeudi# 08:00-17:30;vendredi# 08:00-17:30'
 image: '0.jpg'
+layout: store
 ---

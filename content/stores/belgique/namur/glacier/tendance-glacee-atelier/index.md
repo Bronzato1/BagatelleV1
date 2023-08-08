@@ -7,4 +7,5 @@ mail: info@tendanceglacee.be, info@tendanceglacee.com
 location: https://www.google.com/maps?cid=1615826261260239320
 website: https://www.tendanceglacee.be/
 image: '0.jpg'
+layout: store
 ---

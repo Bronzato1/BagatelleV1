@@ -1,7 +1,17 @@
-{{ if .Params.authors }}
+{{ if .Params.author }}
 <div class="widget-sidebar widget-post-author">
-  {{ range first 1 .Params.authors }}
-  {{ with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+
+    {{ with .Params.author }}
+
+  <!--
+      Autre façon de rechercher:
+      { { range first 1 .Params.authors }}
+      { { with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .)) }}
+  -->
+
+  {{ $author := index (where (where $.Site.Pages "Type" "in" "authors") ".File.ContentBaseName" "=" .) 0 }}
+
+  {{ with $author }}
 
   {{ if .Params.image }}
   <div class="post-author-image">

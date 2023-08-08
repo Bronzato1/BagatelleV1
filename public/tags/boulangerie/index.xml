@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>boulangerie on Bagatelle</title>
+    <link>http://example.org/tags/boulangerie/</link>
+    <description>Recent content in boulangerie on Bagatelle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/boulangerie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Le goût de la tradition</title>
+      <link>http://example.org/posts/belgique/namur/le-gout-de-la-tradition/</link>
+      <pubDate>Tue, 25 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/belgique/namur/le-gout-de-la-tradition/</guid>
+      <description>Cette boulangerie propose des produits artisanaux, faits maison, avec des ingrédients de qualité et un savoir-faire traditionnel. Le pain est croustillant, moelleux et savoureux, les croissants sont feuilletés et fondants, les brioches sont généreuses et parfumées. Il y en a pour tous les goûts et tous les budgets, que vous soyez plutôt baguette ou pain complet, chocolatine ou pain au chocolat, tarte aux pommes ou éclair au café. Le personnel est accueillant, souriant et à l&amp;rsquo;écoute, toujours prêt à vous conseiller et à vous faire découvrir les spécialités du jour.</description>
+    </item>
+    
+  </channel>
+</rss>

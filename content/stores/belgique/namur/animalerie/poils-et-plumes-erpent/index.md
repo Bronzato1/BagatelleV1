@@ -8,4 +8,5 @@ location: https://www.google.com/maps?cid=4251303144461075750
 website: http://www.poilsetplumes.be/erpent
 schedule: 'samedi# 09:00-18:30;dimanche# Fermé;lundi# 09:00-18:30;mardi# 09:00-18:30;mercredi# 09:00-18:30;jeudi# 09:00-18:30;vendredi# 09:00-18:30'
 image: '0.jpg'
+layout: store
 ---

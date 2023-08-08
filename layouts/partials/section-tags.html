@@ -19,7 +19,14 @@
 {{ end }}
 
 {{ range .Site.Params.tag }}
-{{ $tags_range := ($.Site.GetPage "taxonomyTerm" .tag).Pages }}
+
+<!--
+    Avant:
+    { { $tags_range := ($.Site.GetPage "taxonomyTerm" .tag).Pages }}
+-->
+
+{{ $t := slice .tag }}
+{{ $tags_range := (where (where $.Site.Pages "Type" "in" "posts") ".Params.tags" "intersect" $t) }}
 
 <!-- begin section-tags -->
 <section class="section section-tags animate">

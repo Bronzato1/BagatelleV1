@@ -1,5 +1,4 @@
 ---
 title: Auteurs (tous)
-layout: store.list
-type: author
+layout: author.terms
 ---
