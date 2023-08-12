@@ -1,5 +1,7 @@
 {{ define "main" }}
 
+{{ partial "debug-crawler" . }}
+
 <!-- begin authors -->
 <section class="section authors">
 
@@ -11,7 +13,7 @@
 
       <div class="row">
         <!--{ { range .Data.Pages.ByParam "name" }}-->
-        {{ $pages := partial "page-crawler" (dict "context" .Data.Pages) }}
+        {{ $pages := partial "page-crawler" . }} 
         {{ range $pages }}
         <div class="col col-3 col-w-6 col-t-12 animate">
           <div class="authors__info">

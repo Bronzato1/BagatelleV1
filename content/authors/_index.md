@@ -1,4 +1,4 @@
 ---
-title: Auteurs (tous)
+title: Auteurs pour Namur
 layout: author.terms
 ---

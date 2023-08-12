@@ -24,19 +24,19 @@
             <ul class="nav__list list-reset">
 
               {{ $currentPage := . }}
-              {{ range.Site.Menus.main }}
+              {{ range .Site.Menus.main }}
               {{ $menuURL := .URL | absLangURL }}
               {{ $pageURL:= $currentPage.Permalink | absLangURL }}
               {{ $active := eq $menuURL $pageURL }}
 
               {{ if .HasChildren }}
-              <li class="nav__item dropdown">
+              <li class="nav__item dropdown">    
                 <span class="nav__link dropdown-toggle">{{ .Name }} <i class="ion ion-ios-arrow-down arrow-down"></i></span>
                 <div class="dropdown-menu">
                   {{ range .Children }}
                   {{ $childURL := .URL | absLangURL }}
                   {{ $active := eq $childURL $pageURL }}
-                    <i class="ico {{ .Pre }}"></i>
+                  <i class="ico small {{ .Name | lower }}"></i>
                   <a href="{{if findRE `^#` .URL}}{{if not $.IsHome}}{{site.BaseURL | relLangURL}}{{end}}{{ .URL }}{{else}}{{.URL | relLangURL}}{{end}}"
                     class="nav__link{{ if $active }} active-link{{ end }}">{{ .Name }}</a>
                   {{ end }}

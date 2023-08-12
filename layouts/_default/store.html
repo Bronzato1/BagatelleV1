@@ -69,17 +69,19 @@
     { { $data := (where (where .Site.Pages "Type" "in" "posts") ".Params.stores" "intersect" $t ) }}
     -->
 
-    {{ $postsTree := (where (where .Site.Pages "Type" "in" "posts") ".Params.store" "=" .File.ContentBaseName ) }}
-    {{ $postsPages := partial "page-crawler" (dict "context" $postsTree) }}
+    {{ $postsTree := (where (where .Site.Pages "Type" "in" "posts") ".Params.store" "=" .File.ContentBaseName) }}
+    {{ $postsPages := partial "pages-crawler" $postsTree  }}
 
     <h2 class="store__posts__count">{{ len $postsPages }} {{ if lt (len $postsPages) 2 }}article{{ else }}articles{{ end }}</h2>
     
     <div class="row animate">
 
+        {{ if $postsPages }}
         {{ range $postsPages }}
         <div class="col col-4 col-d-6 col-t-12">
             {{ partial "article.html" (dict "context" .) }}
         </div>
+        {{ end }}
         {{ end }}
     </div>
   </div>

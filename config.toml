@@ -23,57 +23,49 @@ paginate = 12
   [[menu.main]]
     parent = "Commerçants"
     name = "Shopping"
-    pre = "shop"
-    url = "/stores/belgique/namur/shopping/"
+    url = "/stores/shopping/"
     weight = 1
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Boulangerie"
-    pre = "bakery"
-    url = "/stores/belgique/namur/boulangerie/"
+    url = "/stores/boulangerie/"
     weight = 2
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Boucherie"
-    pre = "meat"
-    url = "/stores/belgique/namur/boucherie/"
+    url = "/stores/boucherie/"
     weight = 3
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Restaurant"
-    pre = "restaurant"
-    url = "/stores/belgique/namur/restaurant/"
+    url = "/stores/restaurant/"
     weight = 5
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Chocolatier"
-    pre = "chocolat"
-    url = "/stores/belgique/namur/chocolatier/"
+    url = "/stores/chocolatier/"
     weight = 6
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Glacier"
-    pre = "ice"
-    url = "/stores/belgique/namur/glacier/"
+    url = "/stores/glacier/"
     weight = 7
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Massage"
-    pre = "massage"
-    url = "/stores/belgique/namur/massage/"
+    url = "/stores/massage/"
     weight = 7
 
   [[menu.main]]
     parent = "Commerçants"
     name = "Pharmacie"
-    pre = "pill"
-    url = "/stores/belgique/namur/pharmacie/"
+    url = "/stores/pharmacie/"
     weight = 8
 
   [[menu.main]]
@@ -84,7 +76,7 @@ paginate = 12
   [[menu.main]]
     parent = "Pages"
     name = "Auteurs"
-    url = "/authors/"
+    url = "/authors/country/city/"
     weight = 1
 
   [[menu.main]]
@@ -98,7 +90,6 @@ paginate = 12
     name = "Contact"
     url = "/contact/"
     weight = 3
-
 
   # Call to action button
   [params.cta_button]
@@ -209,16 +200,14 @@ paginate = 12
     # NOTE
     # Danto comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want.
 
+[taxonomies]
+  tag = "tags"
+
   #-------------------------------
   # Comment Section (Disqus)
   [params.disqus]
     enable = true
     disqusShortname = "anvod-studio-test" # Add your shortname for Disqus Comment. For example anvod-studio-test
-
-
-[taxonomies]
-  tag = "tags"
-
 
 [markup]
   [markup.goldmark]

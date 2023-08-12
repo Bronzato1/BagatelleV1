@@ -1,4 +1,4 @@
 ---
-title: Commerçants
+title: Commerçants de Namur
 layout: store.terms
 ---

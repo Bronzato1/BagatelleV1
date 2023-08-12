@@ -1,32 +1,47 @@
 {{ define "main" }}
 
+<!--
+{ { $rootPage := (.Site.GetPage "/tags/") }}
+{ { partial "debug-crawler" $rootPage }}
+{ { partial "debug-crawler" . }}
+-->
+
 <!-- begin hero -->
 <section class="hero hero--left">
-  <div class="container">
-    {{ if .Title }}
-    <h1 class="hero__title">{{ .Title }}</h1>
-    {{ end }}
-  </div>
+    <div class="container">
+        {{ if .Title }}
+        <h1 class="hero__title">{{ .Title }}</h1>
+        {{ end }}
+    </div>
 </section>
 <!-- end hero -->
 
-<!-- begin tags -->
+{{ $split := split .File.Dir "\\" }}
+{{ $countryA := index  $split 1 }}
+{{ $cityA := index  $split 2 }}
+
+{{ $selPages := (where (where .Site.Pages "Type" "=" "tags") "File.Dir" "eq" "") }}
+
 <section class="section tags animate">
-  <div class="container">
-    <div class="row">
-      {{ range .Pages }}
-      <div class="col col-2 col-w-3 col-d-6 col-m-12">
-        <a href="{{ .RelPermalink }}" class="tag-image" title="{{ .Title }}">
-            {{ range .Data.Pages }}
-            <img class="lazy" data-src="{{ partial "image-url" . | absURL }}" alt="{{ .Title }}">
+    <div class="container">
+        <div class="row">
+            {{ range $selPages }}
+            <div class="col col-2 col-w-3 col-d-6 col-m-12">
+                <a href="{{ .RelPermalink }}" class="tag-image" title="{{ .Title }}">
+                    {{ range .Data.Pages }}
+                    {{ $split := split .File.Dir "\\" }}
+                    {{ $countryB := index $split 1 }}
+                    {{ $cityB := index $split 2 }}
+                    {{ if or (not $countryA) (and (eq $countryA $countryB) (eq $cityA $cityB)) }}
+                    <img class="lazy" data-src="{{ partial "image-url" . | absURL }}" alt="{{ .Title }}">
+                    {{ end }}
+                    {{ end }}
+                    <span class="tag-name">{{ .Title }}</span>
+                </a>
+            </div>
             {{ end }}
-          <span class="tag-name">{{ .Title }}</span>
-        </a>
-      </div>
-      {{ end }}
+        </div>
     </div>
-  </div>
 </section>
 <!-- end tags -->
-
 {{ end }}

@@ -1,5 +1,7 @@
 {{ define "main" }}
 
+<!--{ { partial "debug-crawler" . }}-->
+
 <!-- begin stores -->
 <section class="section stores">
 
@@ -7,12 +9,13 @@
         <div class="container">
 
             <div class="stores__head">
+                <i class="ico big {{ .File.ContentBaseName }}"></i>
                 <h1 class="stores__title">{{ .Title }}</h1>
             </div>
-            
+
             <div class="row">
                 <!--{ { range .Data.Pages.ByParam "name" }}-->
-                {{ $pages := partial "page-crawler" (dict "context" .Pages) }}
+                {{ $pages := partial "page-crawler" .  }}
                 {{ range $pages }}
                 <div class="col col-3 col-w-6 col-t-12 animate">
                     <div class="stores__info">

@@ -1,18 +1,9 @@
-{{ $currentPage := .context }}
-{{ $pages := default (slice) .pages }}
-
-{{ with $currentPage }}
-{{ range . }}
-{{ if .IsPage }}
-{{ $pages = $pages | append . }}
-{{ end }}
-
-{{ $subContext := .Pages }}
-{{ with .Pages }}
-{{ $subpages := partial "page-crawler" (dict "context" $subContext) }}
-{{ $pages = $pages | append $subpages }}
-{{ end }}
-{{ end }}
-{{ end }}
-
-{{ return $pages }}
+{{ $pages := default (slice)                                    }}
+{{ range .Pages                                                 }}
+{{      if .IsPage                                              }}
+{{          $pages = $pages | append .                          }}
+{{      end                                                     }}
+{{      $subpages := partial "page-crawler" .                   }}
+{{      $pages = $pages | append $subpages                      }}
+{{ end                                                          }}
+{{ return $pages                                                }}

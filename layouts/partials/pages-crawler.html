@@ -1,0 +1,9 @@
+{{ $pages := default (slice)                                    }}
+{{ range .                                                      }}
+{{      if .IsPage                                              }}
+{{          $pages = $pages | append .                          }}
+{{      end                                                     }}
+{{      $subpages := partial "pages-crawler" .Pages             }}
+{{      $pages = $pages | append $subpages                      }}
+{{ end                                                          }}
+{{ return $pages                                                }}

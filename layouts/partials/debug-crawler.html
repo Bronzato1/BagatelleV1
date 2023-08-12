@@ -1,0 +1,26 @@
+<style>
+    details.debug-crawler {
+        padding-left: 20px;
+    }
+    details.debug-crawler p {
+        padding-left: 35px;
+        margin-bottom: 0px;
+    }
+    details.debug-crawler span {
+        border-radius: 20px;
+        color: var(--button-color);
+        background-color: var(--button-background-color);
+        padding: 0px 8px;
+    }
+</style>
+
+<details class="debug-crawler">
+    <summary><span>.Page</span> {{ .Page }}</summary>
+    {{ partial "debug-crawler-prop" . }}
+    <details class="debug-crawler">
+        <summary><span>.Pages | len</span> {{ .Pages | len }}</summary>
+        {{ range .Pages }}
+        {{ partial "debug-crawler" . }}
+        {{ end }}
+    </details>
+</details>
